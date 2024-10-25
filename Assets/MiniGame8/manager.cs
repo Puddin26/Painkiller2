@@ -1,8 +1,8 @@
 using UnityEngine;
-using TMPro; // Use this for TextMeshPro
+using TMPro; 
 using System.Collections.Generic;
 
-public class GameManager : MonoBehaviour
+public class CalanderManager : MonoBehaviour
 {
     public int totalObjects = 4;
     public int snappedCount;

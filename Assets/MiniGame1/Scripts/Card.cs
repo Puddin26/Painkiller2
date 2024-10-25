@@ -5,7 +5,6 @@ using UnityEngine;
 public class Card : MonoBehaviour
 {
     public Sprite frontSprite;    // The sprite shown after clicking
-    public Sprite backSprite;     // The initial sprite
     public GameObject conversationBoxPrefab;  // Prefab for the conversation box
     public float conversationYOffset = 1.0f;  // Adjustable Y offset for conversation box
 
@@ -17,8 +16,7 @@ public class Card : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = backSprite;
-
+        
         // Check if there's a BoxCollider2D and add one if not
         boxCollider = GetComponent<BoxCollider2D>();
         if (boxCollider == null)
@@ -57,7 +55,6 @@ public class Card : MonoBehaviour
         }
     }
 
-
     private void GenerateConversationBox()
     {
         // Instantiate the conversation box beneath the card
@@ -66,7 +63,5 @@ public class Card : MonoBehaviour
     
         // Ensure the instantiated object is active
         conversationBox.SetActive(true);
-        
     }
-
 }

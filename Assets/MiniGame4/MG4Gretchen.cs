@@ -8,6 +8,8 @@ public class MG4Gretchen : MonoBehaviour
     public bool MG4_canInteract, MG4_isLocked;
     public float MG4_distance, MG4_Appear, MG4_walkSpeed;
 
+    public Sprite turnaround;
+
     private SpriteRenderer MG4_mathewRenderer;
 
     // Start is called before the first frame update
@@ -26,7 +28,7 @@ public class MG4Gretchen : MonoBehaviour
             if (Input.GetKey(KeyCode.S)) { MG4_Camera.transform.Translate(Vector3.back * MG4_walkSpeed * Time.deltaTime); }
 
             if (Vector3.Distance(gameObject.transform.position, MG4_Camera.transform.position) < MG4_distance) { gameObject.GetComponent<SpriteRenderer>().color = Color.red; MG4_canInteract = true; }
-            else { gameObject.GetComponent<SpriteRenderer>().color = Color.black; MG4_canInteract = false; }
+            else { MG4_canInteract = false; }
         }
         else
         {
@@ -42,7 +44,8 @@ public class MG4Gretchen : MonoBehaviour
         if(MG4_canInteract)
         {
             MG4_isLocked = true;
-            gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+            gameObject.GetComponent<SpriteRenderer>().sprite = turnaround;
+            gameObject.GetComponent<SpriteRenderer>().color = Color.white;
             print("Look Back");
         }
     }

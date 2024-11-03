@@ -38,7 +38,7 @@ public class LineDrawer : MonoBehaviour
         if(Input.GetMouseButton(0))
         {
             Vector3 currentPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            currentPosition.z = 0;
+            currentPosition.z = -3.28f;
 
             if(Vector3.Distance(currentPosition, previousPosition) > minDistance && !isConnected && MG3Manager.MG3CanDraw)
             {

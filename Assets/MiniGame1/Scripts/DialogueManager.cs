@@ -1,12 +1,22 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    public Transform dialogueContainer; // Parent container for speech bubbles
-    public Sprite[] bubbleSprites; // Array of bubble sprites
-    public bool[] alignLeft; // Array for alignment direction of each bubble (true = left, false = right)
+    [Header("Dialogue Settings")]
+    public RectTransform dialogueContainer;
+    public Sprite[] bubbleSprites;
+    public bool[] alignLeft; // Customizable alignment for each bubble
+    [Tooltip("Scale of the text bubbles.")]
+    [SerializeField] private float bubbleScale = 1f;
+    [Tooltip("Vertical distance to move existing bubbles up.")]
+    [SerializeField] private float moveUpDistance = 50f;
+    [Tooltip("Horizontal distance to align bubbles left or right.")]
+    [SerializeField] private float alignDistance = 100f;
+    public RectTransform Clickable; // Only clicks within this area will trigger the dialogue
 
     private int currentBubbleIndex = 0;
+    private float cumulativeHeight = 0; // Track the total height of all bubbles
 
     void Start()
     {
@@ -17,32 +27,72 @@ public class DialogueManager : MonoBehaviour
     {
         if (currentBubbleIndex < bubbleSprites.Length)
         {
-            // Create a new GameObject with a SpriteRenderer for each bubble
-            GameObject bubbleObject = new GameObject("Bubble_" + currentBubbleIndex);
-            bubbleObject.transform.SetParent(dialogueContainer);
+            // Move existing bubbles up
+            foreach (RectTransform child in dialogueContainer)
+            {
+                child.anchoredPosition += new Vector2(0, moveUpDistance);
+            }
 
-            // Add and configure the SpriteRenderer
-            SpriteRenderer spriteRenderer = bubbleObject.AddComponent<SpriteRenderer>();
-            spriteRenderer.sprite = bubbleSprites[currentBubbleIndex];
+            // Create a new UI GameObject with an Image for each bubble
+            GameObject bubbleObject = new GameObject("Bubble_" + currentBubbleIndex, typeof(RectTransform), typeof(Image));
+            RectTransform bubbleTransform = bubbleObject.GetComponent<RectTransform>();
+            bubbleTransform.SetParent(dialogueContainer, false);
+            
+            // Set the anchors to the bottom
+            bubbleTransform.anchorMin = new Vector2(0.5f, 0); // Anchor X in the center, Y at the bottom
+            bubbleTransform.anchorMax = new Vector2(0.5f, 0); // Anchor X in the center, Y at the bottom
+            bubbleTransform.pivot = new Vector2(0.5f, 0); // Set pivot to the bottom center
 
-            // Set alignment by adjusting the bubble's position
-            AlignBubble(bubbleObject.transform, alignLeft[currentBubbleIndex]);
+            // Configure the Image component
+            Image image = bubbleObject.GetComponent<Image>();
+            image.sprite = bubbleSprites[currentBubbleIndex];
+
+            // Calculate and set the RectTransform size based on the sprite's native size
+            Sprite sprite = image.sprite;
+            float width = (sprite.rect.width / sprite.pixelsPerUnit) * bubbleScale;
+            float height = (sprite.rect.height / sprite.pixelsPerUnit) * bubbleScale;
+            bubbleTransform.sizeDelta = new Vector2(width, height);
+
+            // Set the anchored position of the new bubble to the initial position (e.g., at the bottom)
+            bubbleTransform.anchoredPosition = new Vector2(0, 0.5f);
+
+            // Align the bubble to the left or right
+            AlignBubble(bubbleTransform, alignLeft[currentBubbleIndex]);
+
+            // Update the cumulative height and the size of the dialogueContainer
+            cumulativeHeight += moveUpDistance;
+            dialogueContainer.sizeDelta = new Vector2(dialogueContainer.sizeDelta.x, cumulativeHeight + 0.5f);
 
             currentBubbleIndex++;
         }
     }
 
-    private void AlignBubble(Transform bubbleTransform, bool alignLeft)
+    private void AlignBubble(RectTransform bubbleTransform, bool alignLeft)
     {
-        // Set position based on alignment (adjust these values as needed)
-        bubbleTransform.localPosition = alignLeft ? new Vector3(-1, 0, 0) : new Vector3(1, 0, 0);
+        // Calculate the X position for alignment
+        float spriteHalfWidth = bubbleTransform.sizeDelta.x * 0.5f;
+
+        if (alignLeft)
+        {
+            // Align based on the left edge
+            bubbleTransform.anchoredPosition += new Vector2(-alignDistance + spriteHalfWidth, 0);
+        }
+        else
+        {
+            // Align based on the right edge
+            bubbleTransform.anchoredPosition += new Vector2(alignDistance - spriteHalfWidth, 0);
+        }
     }
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) // Show the next bubble on mouse click
         {
-            ShowNextBubble();
+            // Check if the mouse click is within the Clickable RectTransform
+            if (RectTransformUtility.RectangleContainsScreenPoint(Clickable, Input.mousePosition, Camera.main))
+            {
+                ShowNextBubble();
+            }
         }
     }
 }

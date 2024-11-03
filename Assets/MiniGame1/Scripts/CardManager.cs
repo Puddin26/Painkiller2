@@ -7,6 +7,7 @@ public class CardManager : MonoBehaviour
     public float cardYPosition = 0.0f;  // Adjustable Y position for cards
 
     private int currentIndex = 0;
+    private GameObject currentConversationWindow = null;  // Reference to the currently open conversation window
 
     void Start()
     {
@@ -26,24 +27,30 @@ public class CardManager : MonoBehaviour
 
     public void CardClicked(GameObject card)
     {
-        // Check if the card clicked is the one that should be clicked
-        if (cards[currentIndex] == card)
+        // Close the current conversation window if it exists
+        if (currentConversationWindow != null)
+        {
+            Destroy(currentConversationWindow);
+            currentConversationWindow = null;
+        }
+
+        // Open the new conversation window
+        Card cardComponent = card.GetComponent<Card>();
+        currentConversationWindow = cardComponent.ShowConversation();
+
+        // Make sure the clicked card remains clickable
+        cardComponent.SetClickable(true);
+
+        // Enable the next card if there is one
+        if (currentIndex < cards.Length - 1)
         {
             currentIndex++;
-
-            // If there are more cards, enable the next one
-            if (currentIndex < cards.Length)
-            {
-                Debug.Log(cards[currentIndex]);
-                SetCardClickable(currentIndex);
-            }
+            SetCardClickable(currentIndex);
         }
     }
 
     void SetCardClickable(int index)
     {
         cards[index].GetComponent<Card>().SetClickable(true);
-    } 
-    
-    
+    }
 }

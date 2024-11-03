@@ -13,8 +13,10 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private float moveUpDistance = 50f;
     [Tooltip("Horizontal distance to align bubbles left or right.")]
     [SerializeField] private float alignDistance = 100f;
+    public RectTransform Clickable; // Only clicks within this area will trigger the dialogue
 
     private int currentBubbleIndex = 0;
+    private float cumulativeHeight = 0; // Track the total height of all bubbles
 
     void Start()
     {
@@ -25,17 +27,21 @@ public class DialogueManager : MonoBehaviour
     {
         if (currentBubbleIndex < bubbleSprites.Length)
         {
-            // Calculate the cumulative height of all existing bubbles plus the new one
-            float cumulativeHeight = 0;
+            // Move existing bubbles up
             foreach (RectTransform child in dialogueContainer)
             {
-                cumulativeHeight += child.sizeDelta.y + moveUpDistance;
+                child.anchoredPosition += new Vector2(0, moveUpDistance);
             }
-            
+
             // Create a new UI GameObject with an Image for each bubble
             GameObject bubbleObject = new GameObject("Bubble_" + currentBubbleIndex, typeof(RectTransform), typeof(Image));
             RectTransform bubbleTransform = bubbleObject.GetComponent<RectTransform>();
             bubbleTransform.SetParent(dialogueContainer, false);
+            
+            // Set the anchors to the bottom
+            bubbleTransform.anchorMin = new Vector2(0.5f, 0); // Anchor X in the center, Y at the bottom
+            bubbleTransform.anchorMax = new Vector2(0.5f, 0); // Anchor X in the center, Y at the bottom
+            bubbleTransform.pivot = new Vector2(0.5f, 0); // Set pivot to the bottom center
 
             // Configure the Image component
             Image image = bubbleObject.GetComponent<Image>();
@@ -47,12 +53,15 @@ public class DialogueManager : MonoBehaviour
             float height = (sprite.rect.height / sprite.pixelsPerUnit) * bubbleScale;
             bubbleTransform.sizeDelta = new Vector2(width, height);
 
-            // Set initial position and alignment
-            bubbleTransform.anchoredPosition = new Vector2(0, -cumulativeHeight);
+            // Set the anchored position of the new bubble to the initial position (e.g., at the bottom)
+            bubbleTransform.anchoredPosition = new Vector2(0, 0.5f);
+
+            // Align the bubble to the left or right
             AlignBubble(bubbleTransform, alignLeft[currentBubbleIndex]);
 
-            // Update the size of the dialogueContainer to accommodate the new bubble
-            dialogueContainer.sizeDelta = new Vector2(dialogueContainer.sizeDelta.x, cumulativeHeight + height);
+            // Update the cumulative height and the size of the dialogueContainer
+            cumulativeHeight += moveUpDistance;
+            dialogueContainer.sizeDelta = new Vector2(dialogueContainer.sizeDelta.x, cumulativeHeight + 0.5f);
 
             currentBubbleIndex++;
         }
@@ -79,7 +88,11 @@ public class DialogueManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0)) // Show the next bubble on mouse click
         {
-            ShowNextBubble();
+            // Check if the mouse click is within the Clickable RectTransform
+            if (RectTransformUtility.RectangleContainsScreenPoint(Clickable, Input.mousePosition, Camera.main))
+            {
+                ShowNextBubble();
+            }
         }
     }
 }

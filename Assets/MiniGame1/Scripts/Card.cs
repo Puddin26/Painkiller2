@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Card : MonoBehaviour
@@ -9,7 +8,6 @@ public class Card : MonoBehaviour
     public float conversationYOffset = 1.0f;  // Adjustable Y offset for conversation box
 
     private SpriteRenderer spriteRenderer;
-    private bool isClicked = false;
     private bool isClickable = false;  // Controls whether the card can be clicked
     private BoxCollider2D boxCollider;
 
@@ -28,12 +26,21 @@ public class Card : MonoBehaviour
         AdjustColliderSize();
     }
 
-    void AdjustColliderSize()
+    void OnMouseDown()
     {
-        if (spriteRenderer != null && boxCollider != null)
+        if (isClickable)
         {
-            boxCollider.size = spriteRenderer.size;  // Set the collider size to match the sprite size
+            spriteRenderer.sprite = frontSprite;  // Change the sprite to the front sprite
+            FindObjectOfType<CardManager>().CardClicked(gameObject);  // Notify CardManager
         }
+    }
+
+    public GameObject ShowConversation()
+    {
+        // Instantiate the conversation box prefab
+        GameObject conversationBox = Instantiate(conversationBoxPrefab, transform.position + new Vector3(0, -conversationYOffset, 0), Quaternion.identity);
+        conversationBox.SetActive(true);  // Ensure the conversation box is activated
+        return conversationBox;  // Return the conversation box reference
     }
 
     public void SetClickable(bool clickable)
@@ -41,27 +48,11 @@ public class Card : MonoBehaviour
         isClickable = clickable;
     }
 
-    void OnMouseDown()
+    private void AdjustColliderSize()
     {
-        // Only allow interaction if the card is marked as clickable and has not been clicked yet
-        if (!isClicked && isClickable)
+        if (spriteRenderer != null && boxCollider != null)
         {
-            isClicked = true;
-            spriteRenderer.sprite = frontSprite;
-            GenerateConversationBox();
-
-            // Notify the CardManager that this card was clicked
-            FindObjectOfType<CardManager>().CardClicked(this.gameObject);
+            boxCollider.size = spriteRenderer.bounds.size;
         }
-    }
-
-    private void GenerateConversationBox()
-    {
-        // Instantiate the conversation box beneath the card
-        Vector3 conversationPosition = new Vector3(transform.position.x, transform.position.y - conversationYOffset, transform.position.z);
-        GameObject conversationBox = Instantiate(conversationBoxPrefab, conversationPosition, Quaternion.identity);
-    
-        // Ensure the instantiated object is active
-        conversationBox.SetActive(true);
     }
 }

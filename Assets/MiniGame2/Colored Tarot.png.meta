@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 12c65077ec379ae4aac9f5cb564f23aa
+guid: 39a7ed8d7c1fd5b499f408a202d19212
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cards_to_organize_0
+      name: Colored Tarot_0
       rect:
         serializedVersion: 2
-        x: 41
-        y: 25
-        width: 259
-        height: 442
+        x: 178
+        y: 149
+        width: 256
+        height: 440
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48ace8af49f21884384140ac15672f22
-      internalID: -1373336042
+      spriteID: 2342c6ba7313d5148b09e6a7ba4e5d80
+      internalID: 508067334
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cards_to_organize_1
+      name: Colored Tarot_1
       rect:
         serializedVersion: 2
-        x: 328
-        y: 25
-        width: 259
-        height: 442
+        x: 709
+        y: 138
+        width: 256
+        height: 440
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ced44c051a57624a80b1388d2fb8560
-      internalID: 1023852705
+      spriteID: f2c68d53ef608f8488122eb6cf6f6e6d
+      internalID: 5889217
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cards_to_organize_2
+      name: Colored Tarot_2
       rect:
         serializedVersion: 2
-        x: 617
-        y: 29
-        width: 259
-        height: 442
+        x: 1280
+        y: 153
+        width: 257
+        height: 440
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,71 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5cbfef3a2098ea4fa9aa03d69e83cd0
-      internalID: 974798113
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cards_to_organize_3
-      rect:
-        serializedVersion: 2
-        x: 899
-        y: 25
-        width: 261
-        height: 442
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 927f0c24b19c7a442bb7ddb69d1154ef
-      internalID: 1257960813
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cards_to_organize_4
-      rect:
-        serializedVersion: 2
-        x: 1198
-        y: 25
-        width: 259
-        height: 442
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: de9d0ae048c0bf6479861196d205683f
-      internalID: 363743883
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cards_to_organize_5
-      rect:
-        serializedVersion: 2
-        x: 1501
-        y: 25
-        width: 259
-        height: 442
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c57a5337ad73c4040a1248b6ff392efd
-      internalID: 2133063993
+      spriteID: 713673c36b095ab478d59cfe0e64cc03
+      internalID: -1984762746
       vertices: []
       indices: 
       edges: []
@@ -246,12 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Cards_to_organize_0: -1373336042
-      Cards_to_organize_1: 1023852705
-      Cards_to_organize_2: 974798113
-      Cards_to_organize_3: 1257960813
-      Cards_to_organize_4: 363743883
-      Cards_to_organize_5: 2133063993
+      Colored Tarot_0: 508067334
+      Colored Tarot_1: 5889217
+      Colored Tarot_2: -1984762746
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

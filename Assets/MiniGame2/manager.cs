@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro; // Use this for TextMeshPro
 using System.Collections.Generic;
+using Room1;
 
 public class GameManager : MonoBehaviour
 {
@@ -34,11 +35,7 @@ public class GameManager : MonoBehaviour
 
         if (snappedObjects.Count == totalObjects)
         {
-            // Change the sprite of the target object
-            if (targetObject != null && newSprite != null)
-            {
-                targetObject.GetComponent<SpriteRenderer>().sprite = newSprite;
-            }
+
         }
     }
 }

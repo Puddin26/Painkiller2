@@ -9,7 +9,7 @@ public class LineDrawer : MonoBehaviour
     public LineRenderer line;
     public GameObject Reciever;
     public bool canDrawAnother;
-    private bool isConnected;
+    public bool isConnected;
     private Vector3 previousPosition;
     [SerializeField] float minDistance = 0.01f;
 

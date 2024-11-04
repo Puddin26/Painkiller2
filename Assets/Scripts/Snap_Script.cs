@@ -41,7 +41,7 @@ public class SimplifiedObjectMoveAndSnap : MonoBehaviour
             if (currentlyMovingObject == null && objectBounds.Contains(mousePosition))
             {
                 currentlyMovingObject = this;
-                ShowOutline(true);
+
                 // Bring the object to the front by lowering its z-position during dragging
                 transform.position = new Vector3(transform.position.x, transform.position.y, topZPosition-1);
             }
@@ -60,7 +60,7 @@ public class SimplifiedObjectMoveAndSnap : MonoBehaviour
         if (Input.GetMouseButtonUp(0) && currentlyMovingObject == this)
         {
             SnapToPosition();
-            ShowOutline(false);
+
             currentlyMovingObject = null;
             // Set the object to the topmost z-position after drop
             topZPosition -= 1f;  // Decrease the z-position to bring it on top (further forward)

@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro; // Use this for TextMeshPro
 using System.Collections.Generic;
+using Room1;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class GameManager : MonoBehaviour
     public int snappedCount;
     public TextMeshProUGUI arcanaText;
     private HashSet<SimplifiedObjectMoveAndSnap> snappedObjects = new HashSet<SimplifiedObjectMoveAndSnap>();
+    public Room1.CharacterMover characterMover;
 
     void OnEnable()
     {
@@ -31,6 +33,7 @@ public class GameManager : MonoBehaviour
         if (snappedObjects.Count == totalObjects)
         {
             // Actions when all objects are snapped, if needed
+            characterMover.tableDone = 2;
         }
     }
 }

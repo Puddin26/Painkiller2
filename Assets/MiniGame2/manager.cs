@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public int snappedCount;
     public TextMeshProUGUI arcanaText;
     private HashSet<SimplifiedObjectMoveAndSnap> snappedObjects = new HashSet<SimplifiedObjectMoveAndSnap>();
+    public Room1.CharacterMover characterMover;
 
     // Add references for the object and the new sprite
     public GameObject targetObject;
@@ -35,7 +36,12 @@ public class GameManager : MonoBehaviour
 
         if (snappedObjects.Count == totalObjects)
         {
+            if(targetObject != null && newSprite != null)
+            {
+                targetObject.GetComponent<SpriteRenderer>().sprite = newSprite;
+            }
 
+            characterMover.tableDone = 2;
         }
     }
 }

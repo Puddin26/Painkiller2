@@ -52,6 +52,9 @@ public class SimplifiedObjectMoveAndSnap : MonoBehaviour
             // Follow the mouse while maintaining the z position to stay on top
             mousePosition.z = topZPosition-1;
             transform.position = mousePosition;
+            
+            // Reset rotation to zero
+            transform.rotation = Quaternion.identity;
         }
 
         if (Input.GetMouseButtonUp(0) && currentlyMovingObject == this)

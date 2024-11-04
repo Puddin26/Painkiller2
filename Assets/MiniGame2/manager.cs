@@ -10,6 +10,10 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI arcanaText;
     private HashSet<SimplifiedObjectMoveAndSnap> snappedObjects = new HashSet<SimplifiedObjectMoveAndSnap>();
 
+    // Add references for the object and the new sprite
+    public GameObject targetObject;
+    public Sprite newSprite;
+
     void OnEnable()
     {
         SimplifiedObjectMoveAndSnap.OnObjectSnapped += HandleObjectSnapped;
@@ -31,7 +35,6 @@ public class GameManager : MonoBehaviour
 
         if (snappedObjects.Count == totalObjects)
         {
-            // Actions when all objects are snapped, if needed
 
         }
     }

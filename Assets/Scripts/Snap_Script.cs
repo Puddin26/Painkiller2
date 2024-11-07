@@ -12,7 +12,7 @@ public class SimplifiedObjectMoveAndSnap : MonoBehaviour
     protected bool snapped = false;
 
     // Static variable to track topmost z-position
-    private static float topZPosition = -1f; // Start with -1, you can adjust this value as needed
+    private static float topZPosition = -7f; // Start with -1, you can adjust this value as needed
 
     public static event Action<SimplifiedObjectMoveAndSnap> OnObjectSnapped;
 

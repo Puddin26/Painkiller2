@@ -324,7 +324,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapDistance: 1
-  snapPosition: {x: 0, y: 0}
+  snapPositions:
+  - {x: 0, y: 0}
+  dragRangeMin: {x: -8.4, y: -3.5}
+  dragRangeMax: {x: 8.5, y: 3.4}
   outlineObject: {fileID: 0}
 --- !u!1 &361489266
 GameObject:
@@ -925,7 +928,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapDistance: 1
-  snapPosition: {x: 0, y: 0}
+  snapPositions:
+  - {x: 0, y: 0}
+  dragRangeMin: {x: -8.4, y: -3.5}
+  dragRangeMax: {x: 8.5, y: 3.4}
   outlineObject: {fileID: 0}
 --- !u!212 &1097397844
 SpriteRenderer:
@@ -1260,7 +1266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1611985739}
   - component: {fileID: 1611985741}
-  - component: {fileID: 1611985740}
+  - component: {fileID: 1611985742}
   m_Layer: 0
   m_Name: Colored Tarot_1
   m_TagString: Untagged
@@ -1283,21 +1289,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1469371807}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -24.167}
---- !u!114 &1611985740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1611985738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7c63353fb3945d4c9593e73227127bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  snapDistance: 1
-  snapPosition: {x: 0, y: 0}
-  outlineObject: {fileID: 0}
 --- !u!212 &1611985741
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1350,6 +1341,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1611985742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611985738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7c63353fb3945d4c9593e73227127bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snapDistance: 1
+  snapPositions:
+  - {x: 0, y: 0}
+  dragRangeMin: {x: -8.4, y: -3.5}
+  dragRangeMax: {x: 8.5, y: 3.4}
+  outlineObject: {fileID: 0}
 --- !u!1 &1744911702
 GameObject:
   m_ObjectHideFlags: 0

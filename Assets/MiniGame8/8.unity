@@ -264,8 +264,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 187888607}
+  - component: {fileID: 187888608}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -280,12 +281,25 @@ Transform:
   m_GameObject: {fileID: 187888606}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.918, y: -3.214, z: -0.01631454}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &187888608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187888606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 305ba48e2fe57425fbfe9088aee0fdd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalObjects: 9
 --- !u!1 &459293439
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,7 +327,7 @@ Transform:
   m_GameObject: {fileID: 459293439}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.942, y: 0.7, z: 0.021470392}
+  m_LocalPosition: {x: -2.593, y: 1.148, z: 0.021470392}
   m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -385,38 +399,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapDistance: 0.3
   snapPositions:
-  - {x: -0.6, y: -1.55}
-  - {x: 0, y: -1.55}
-  - {x: 0.63, y: -1.55}
-  - {x: 1.25, y: -1.55}
-  - {x: 1.87, y: -1.55}
-  - {x: -1.85, y: -2.25}
-  - {x: -1.25, y: -2.25}
-  - {x: -0.6, y: -2.25}
-  - {x: 0, y: -2.25}
-  - {x: 0.63, y: -2.25}
-  - {x: 1.25, y: -2.25}
-  - {x: 1.87, y: -2.25}
-  - {x: -1.85, y: -2.9}
-  - {x: -1.25, y: -2.9}
-  - {x: -0.6, y: -2.9}
-  - {x: 0, y: -2.9}
-  - {x: 1.25, y: -2.9}
-  - {x: 1.87, y: -2.9}
-  - {x: -1.85, y: -3.6}
-  - {x: -1.25, y: -3.6}
-  - {x: -0.6, y: -3.6}
-  - {x: 0, y: -3.6}
-  - {x: 0.63, y: -3.6}
-  - {x: 1.25, y: -3.6}
-  - {x: 1.87, y: -3.6}
-  - {x: -1.85, y: -4.3}
-  - {x: -1.25, y: -4.3}
-  - {x: -0.6, y: -4.3}
-  - {x: 0, y: -4.3}
-  - {x: 0.63, y: -4.3}
-  dragRangeMin: {x: -6.4, y: -4.9}
-  dragRangeMax: {x: 6.2, y: -0.2}
+  - {x: -0.6, y: 2.85}
+  - {x: 0, y: 2.85}
+  - {x: 0.63, y: 2.85}
+  - {x: 1.25, y: 2.85}
+  - {x: 1.87, y: 2.85}
+  - {x: -1.85, y: 2.15}
+  - {x: -1.25, y: 2.15}
+  - {x: -0.6, y: 2.15}
+  - {x: 0, y: 2.15}
+  - {x: 1.25, y: 2.15}
+  - {x: 1.87, y: 2.15}
+  - {x: -1.85, y: 1.43}
+  - {x: -1.25, y: 1.43}
+  - {x: -0.6, y: 1.43}
+  - {x: 0, y: 1.43}
+  - {x: 0.63, y: 1.43}
+  - {x: 1.25, y: 1.43}
+  - {x: 1.87, y: 1.43}
+  - {x: -1.85, y: 0.75}
+  - {x: -1.25, y: 0.75}
+  - {x: -0.6, y: 0.75}
+  - {x: 0, y: 0.75}
+  - {x: 0.63, y: 0.75}
+  - {x: 1.25, y: 0.75}
+  - {x: 1.87, y: 0.75}
+  - {x: -1.85, y: 0.09}
+  - {x: -1.25, y: 0.09}
+  - {x: -0.6, y: 0.09}
+  - {x: 0, y: 0.09}
+  - {x: 0.63, y: 0.09}
+  dragRangeMin: {x: -6.2, y: 0.4}
+  dragRangeMax: {x: 6.2, y: 4.8}
   outlineObject: {fileID: 0}
 --- !u!1 &533146643
 GameObject:
@@ -445,7 +459,7 @@ Transform:
   m_GameObject: {fileID: 533146643}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.096, y: 0.316, z: 0.021470392}
+  m_LocalPosition: {x: -3.668, y: 0.64900005, z: 0.021470392}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -517,38 +531,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapDistance: 0.3
   snapPositions:
-  - {x: -0.6, y: -1.55}
-  - {x: 0, y: -1.55}
-  - {x: 0.63, y: -1.55}
-  - {x: 1.25, y: -1.55}
-  - {x: 1.87, y: -1.55}
-  - {x: -1.85, y: -2.25}
-  - {x: -1.25, y: -2.25}
-  - {x: -0.6, y: -2.25}
-  - {x: 0, y: -2.25}
-  - {x: 0.63, y: -2.25}
-  - {x: 1.25, y: -2.25}
-  - {x: 1.87, y: -2.25}
-  - {x: -1.85, y: -2.9}
-  - {x: -1.25, y: -2.9}
-  - {x: -0.6, y: -2.9}
-  - {x: 0, y: -2.9}
-  - {x: 1.25, y: -2.9}
-  - {x: 1.87, y: -2.9}
-  - {x: -1.85, y: -3.6}
-  - {x: -1.25, y: -3.6}
-  - {x: -0.6, y: -3.6}
-  - {x: 0, y: -3.6}
-  - {x: 0.63, y: -3.6}
-  - {x: 1.25, y: -3.6}
-  - {x: 1.87, y: -3.6}
-  - {x: -1.85, y: -4.3}
-  - {x: -1.25, y: -4.3}
-  - {x: -0.6, y: -4.3}
-  - {x: 0, y: -4.3}
-  - {x: 0.63, y: -4.3}
-  dragRangeMin: {x: -6.4, y: -4.9}
-  dragRangeMax: {x: 6.2, y: -0.2}
+  - {x: -0.6, y: 3}
+  - {x: 0, y: 3}
+  - {x: 0.63, y: 3}
+  - {x: 1.25, y: 3}
+  - {x: 1.87, y: 3}
+  - {x: -1.85, y: 2.3}
+  - {x: -1.25, y: 2.3}
+  - {x: -0.6, y: 2.3}
+  - {x: 0, y: 2.3}
+  - {x: 1.25, y: 2.3}
+  - {x: 1.87, y: 2.3}
+  - {x: -1.85, y: 1.58}
+  - {x: -1.25, y: 1.58}
+  - {x: -0.6, y: 1.58}
+  - {x: 0, y: 1.58}
+  - {x: 0.63, y: 1.58}
+  - {x: 1.25, y: 1.58}
+  - {x: 1.87, y: 1.58}
+  - {x: -1.85, y: 0.9}
+  - {x: -1.25, y: 0.9}
+  - {x: -0.6, y: 0.9}
+  - {x: 0, y: 0.9}
+  - {x: 0.63, y: 0.9}
+  - {x: 1.25, y: 0.9}
+  - {x: 1.87, y: 0.9}
+  - {x: -1.85, y: 0.24}
+  - {x: -1.25, y: 0.24}
+  - {x: -0.6, y: 0.24}
+  - {x: 0, y: 0.24}
+  - {x: 0.63, y: 0.24}
+  dragRangeMin: {x: -6.2, y: 0.4}
+  dragRangeMax: {x: 6.2, y: 4.8}
   outlineObject: {fileID: 0}
 --- !u!1 &720545415
 GameObject:
@@ -577,7 +591,7 @@ Transform:
   m_GameObject: {fileID: 720545415}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.152, y: 0.972, z: 0.021470392}
+  m_LocalPosition: {x: -3.724, y: 1.3050001, z: 0.021470392}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -649,38 +663,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapDistance: 0.3
   snapPositions:
-  - {x: -0.6, y: -1.55}
-  - {x: 0, y: -1.55}
-  - {x: 0.63, y: -1.55}
-  - {x: 1.25, y: -1.55}
-  - {x: 1.87, y: -1.55}
-  - {x: -1.85, y: -2.25}
-  - {x: -1.25, y: -2.25}
-  - {x: -0.6, y: -2.25}
-  - {x: 0, y: -2.25}
-  - {x: 0.63, y: -2.25}
-  - {x: 1.25, y: -2.25}
-  - {x: 1.87, y: -2.25}
-  - {x: -1.85, y: -2.9}
-  - {x: -1.25, y: -2.9}
-  - {x: -0.6, y: -2.9}
-  - {x: 0, y: -2.9}
-  - {x: 1.25, y: -2.9}
-  - {x: 1.87, y: -2.9}
-  - {x: -1.85, y: -3.6}
-  - {x: -1.25, y: -3.6}
-  - {x: -0.6, y: -3.6}
-  - {x: 0, y: -3.6}
-  - {x: 0.63, y: -3.6}
-  - {x: 1.25, y: -3.6}
-  - {x: 1.87, y: -3.6}
-  - {x: -1.85, y: -4.3}
-  - {x: -1.25, y: -4.3}
-  - {x: -0.6, y: -4.3}
-  - {x: 0, y: -4.3}
-  - {x: 0.63, y: -4.3}
-  dragRangeMin: {x: -6.4, y: -4.9}
-  dragRangeMax: {x: 6.2, y: -0.2}
+  - {x: -0.6, y: 3}
+  - {x: 0, y: 3}
+  - {x: 0.63, y: 3}
+  - {x: 1.25, y: 3}
+  - {x: 1.87, y: 3}
+  - {x: -1.85, y: 2.3}
+  - {x: -1.25, y: 2.3}
+  - {x: -0.6, y: 2.3}
+  - {x: 0, y: 2.3}
+  - {x: 1.25, y: 2.3}
+  - {x: 1.87, y: 2.3}
+  - {x: -1.85, y: 1.58}
+  - {x: -1.25, y: 1.58}
+  - {x: -0.6, y: 1.58}
+  - {x: 0, y: 1.58}
+  - {x: 0.63, y: 1.58}
+  - {x: 1.25, y: 1.58}
+  - {x: 1.87, y: 1.58}
+  - {x: -1.85, y: 0.9}
+  - {x: -1.25, y: 0.9}
+  - {x: -0.6, y: 0.9}
+  - {x: 0, y: 0.9}
+  - {x: 0.63, y: 0.9}
+  - {x: 1.25, y: 0.9}
+  - {x: 1.87, y: 0.9}
+  - {x: -1.85, y: 0.24}
+  - {x: -1.25, y: 0.24}
+  - {x: -0.6, y: 0.24}
+  - {x: 0, y: 0.24}
+  - {x: 0.63, y: 0.24}
+  dragRangeMin: {x: -6.2, y: 0.4}
+  dragRangeMax: {x: 6.2, y: 4.8}
   outlineObject: {fileID: 0}
 --- !u!1 &787127172
 GameObject:
@@ -1066,7 +1080,7 @@ Transform:
   m_GameObject: {fileID: 974667652}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.363, y: 1.203, z: 0.021470392}
+  m_LocalPosition: {x: -3.03, y: 1.45, z: 0.021470392}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1086,9 +1100,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapDistance: 0.3
   snapPositions:
-  - {x: 0.63, y: -2.9}
-  dragRangeMin: {x: -6.4, y: -4.9}
-  dragRangeMax: {x: 6.2, y: -0.2}
+  - {x: 0.63, y: 2.15}
+  dragRangeMin: {x: -6.2, y: 0.4}
+  dragRangeMax: {x: 6.2, y: 4.8}
   outlineObject: {fileID: 0}
 --- !u!1 &1038172724
 GameObject:
@@ -1524,7 +1538,7 @@ Transform:
   m_GameObject: {fileID: 1273020780}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5610201, y: 0.57765436, z: -0.021470392}
+  m_LocalPosition: {x: 0, y: 0, z: -0.021470392}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1562,7 +1576,7 @@ Transform:
   m_GameObject: {fileID: 1455821546}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.369, y: 0.425, z: 0.021470392}
+  m_LocalPosition: {x: -2.941, y: 0.7580001, z: 0.021470392}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1634,38 +1648,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapDistance: 0.3
   snapPositions:
-  - {x: -0.6, y: -1.55}
-  - {x: 0, y: -1.55}
-  - {x: 0.63, y: -1.55}
-  - {x: 1.25, y: -1.55}
-  - {x: 1.87, y: -1.55}
-  - {x: -1.85, y: -2.25}
-  - {x: -1.25, y: -2.25}
-  - {x: -0.6, y: -2.25}
-  - {x: 0, y: -2.25}
-  - {x: 0.63, y: -2.25}
-  - {x: 1.25, y: -2.25}
-  - {x: 1.87, y: -2.25}
-  - {x: -1.85, y: -2.9}
-  - {x: -1.25, y: -2.9}
-  - {x: -0.6, y: -2.9}
-  - {x: 0, y: -2.9}
-  - {x: 1.25, y: -2.9}
-  - {x: 1.87, y: -2.9}
-  - {x: -1.85, y: -3.6}
-  - {x: -1.25, y: -3.6}
-  - {x: -0.6, y: -3.6}
-  - {x: 0, y: -3.6}
-  - {x: 0.63, y: -3.6}
-  - {x: 1.25, y: -3.6}
-  - {x: 1.87, y: -3.6}
-  - {x: -1.85, y: -4.3}
-  - {x: -1.25, y: -4.3}
-  - {x: -0.6, y: -4.3}
-  - {x: 0, y: -4.3}
-  - {x: 0.63, y: -4.3}
-  dragRangeMin: {x: -6.4, y: -4.9}
-  dragRangeMax: {x: 6.2, y: -0.2}
+  - {x: -0.6, y: 3}
+  - {x: 0, y: 3}
+  - {x: 0.63, y: 3}
+  - {x: 1.25, y: 3}
+  - {x: 1.87, y: 3}
+  - {x: -1.85, y: 2.3}
+  - {x: -1.25, y: 2.3}
+  - {x: -0.6, y: 2.3}
+  - {x: 0, y: 2.3}
+  - {x: 1.25, y: 2.3}
+  - {x: 1.87, y: 2.3}
+  - {x: -1.85, y: 1.58}
+  - {x: -1.25, y: 1.58}
+  - {x: -0.6, y: 1.58}
+  - {x: 0, y: 1.58}
+  - {x: 0.63, y: 1.58}
+  - {x: 1.25, y: 1.58}
+  - {x: 1.87, y: 1.58}
+  - {x: -1.85, y: 0.9}
+  - {x: -1.25, y: 0.9}
+  - {x: -0.6, y: 0.9}
+  - {x: 0, y: 0.9}
+  - {x: 0.63, y: 0.9}
+  - {x: 1.25, y: 0.9}
+  - {x: 1.87, y: 0.9}
+  - {x: -1.85, y: 0.24}
+  - {x: -1.25, y: 0.24}
+  - {x: -0.6, y: 0.24}
+  - {x: 0, y: 0.24}
+  - {x: 0.63, y: 0.24}
+  dragRangeMin: {x: -6.2, y: 0.4}
+  dragRangeMax: {x: 6.2, y: 4.8}
   outlineObject: {fileID: 0}
 --- !u!1 &1689194106
 GameObject:
@@ -2359,12 +2373,12 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 787127175}
+  - {fileID: 187888607}
   - {fileID: 814110725}
   - {fileID: 1752470156}
   - {fileID: 1861551470}
   - {fileID: 1038172725}
   - {fileID: 1273020781}
-  - {fileID: 187888607}
   - {fileID: 1982292461}
   - {fileID: 842180313}
   - {fileID: 1993756926}

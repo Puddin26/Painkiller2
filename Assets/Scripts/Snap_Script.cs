@@ -16,7 +16,7 @@ public class SimplifiedObjectMoveAndSnap : MonoBehaviour
     protected bool snapped = false;
 
     // Static variable to track topmost z-position
-    private static float topZPosition = -7f;
+    private static float topZPosition = 0f;
 
     public static event Action<SimplifiedObjectMoveAndSnap> OnObjectSnapped;
 

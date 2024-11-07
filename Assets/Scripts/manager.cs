@@ -1,13 +1,11 @@
 using UnityEngine;
-using TMPro; 
 using System.Collections.Generic;
 
-public class CalanderManager : MonoBehaviour
+public class SnapManager : MonoBehaviour
 {
     public int totalObjects = 4;
-    public int snappedCount;
-    public TextMeshProUGUI arcanaText;
-    private HashSet<SimplifiedObjectMoveAndSnap> snappedObjects = new HashSet<SimplifiedObjectMoveAndSnap>();
+    protected HashSet<SimplifiedObjectMoveAndSnap> snappedObjects = new HashSet<SimplifiedObjectMoveAndSnap>();
+
 
     void OnEnable()
     {
@@ -19,18 +17,17 @@ public class CalanderManager : MonoBehaviour
         SimplifiedObjectMoveAndSnap.OnObjectSnapped -= HandleObjectSnapped;
     }
 
-    void HandleObjectSnapped(SimplifiedObjectMoveAndSnap snappedObject)
+    protected virtual void HandleObjectSnapped(SimplifiedObjectMoveAndSnap snappedObject)
     {
         if (!snappedObjects.Contains(snappedObject))
         {
             snappedObjects.Add(snappedObject);
-            snappedCount++;
-            arcanaText.text = $"Major Arcana ({snappedCount}/22)";
+            //Things after each time new object snapped in place
         }
 
         if (snappedObjects.Count == totalObjects)
         {
-            // Actions when all objects are snapped, if needed
+            //Things after all objects snapped in place
         }
     }
 }

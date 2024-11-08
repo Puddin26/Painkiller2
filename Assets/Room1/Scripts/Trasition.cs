@@ -10,6 +10,7 @@ public class Trasition : MonoBehaviour
     public string scene_name;
     SpriteRenderer transition_sprite;
     public Follower follower;
+    public float Transition_time;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,6 @@ public class Trasition : MonoBehaviour
     {
         //print(transition_sprite.color.a);
 
-
         if(follower.letsmove)
         {
             can_transition = true;
@@ -33,7 +33,7 @@ public class Trasition : MonoBehaviour
 
         if(can_transition)
         {
-            transition_sprite.color += new Color(0f, 0f, 0f, 0.5f * Time.deltaTime);
+            transition_sprite.color += new Color(0f, 0f, 0f, Transition_time * Time.deltaTime);
         }
         if(transition_sprite.color.a >= 1) 
         {

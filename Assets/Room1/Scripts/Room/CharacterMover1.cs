@@ -63,19 +63,19 @@ namespace Room2
                     lineDrawer.StartLine(transform.position);
                     anim.SetBool("IsWalking", false);
                 }
-                if(transform.position.x > 4.5f)
+                if(transform.position.x > 6f)
                 {
                     isMoving = false;
                     lineDrawer.StartLine(transform.position);
                     anim.SetBool("IsWalking", false);
-                    transform.position = new Vector2(4, transform.position.y);
+                    transform.position = new Vector2(5.8f, transform.position.y);
                 }
-                if (transform.position.x < -3.5f)
+                if (transform.position.x < -2.5f)
                 {
                     isMoving = false;
                     lineDrawer.StartLine(transform.position);
                     anim.SetBool("IsWalking", false);
-                    transform.position = new Vector2(-3, transform.position.y);
+                    transform.position = new Vector2(-2.3f, transform.position.y);
                 }
             }
         }

@@ -119,12 +119,11 @@ namespace Room1
         {
             if (other.tag == "mathew_table")
             {
-                SpriteRenderer sprite = other.GetComponent<SpriteRenderer>();
+                texter[0].SetActive(false);
             }
             if (other.tag == "mathew_calender")
             {
-                SpriteRenderer sprite = other.GetComponent<SpriteRenderer>();
-                texter[1].SetActive(true);
+                texter[1].SetActive(false);
             }
         }
 

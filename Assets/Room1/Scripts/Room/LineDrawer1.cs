@@ -12,6 +12,7 @@ namespace Room2
         private Vector3 previousPosition;
         [SerializeField] float minDistance = 0.1f;
         public Follower follower;
+        public float yvalue;
 
 
         // Start is called before the first frame update
@@ -35,7 +36,7 @@ namespace Room2
             {
                 Vector3 currentPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 currentPosition.z = -3;
-                currentPosition.y = -18.03332f;
+                currentPosition.y = yvalue;
 
                 if (Vector3.Distance(currentPosition, previousPosition) > minDistance)
                 {

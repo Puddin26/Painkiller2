@@ -5107,6 +5107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextPage: 0
   arrow: {fileID: 802984155}
+  letsmove: 0
 --- !u!82 &61831149
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5999,7 +6000,7 @@ Transform:
   m_GameObject: {fileID: 372144346}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.21125235, y: 0.424623, z: -0.2}
+  m_LocalPosition: {x: 0, y: 0, z: -0.2}
   m_LocalScale: {x: 1.215491, y: 1.2132072, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8118,7 +8119,7 @@ MonoBehaviour:
   - {fileID: 218434779, guid: 19a078e82201745f3ad11b4e1dc5538f, type: 3}
   - {fileID: 1733223868, guid: 19a078e82201745f3ad11b4e1dc5538f, type: 3}
   - {fileID: 404596506, guid: 19a078e82201745f3ad11b4e1dc5538f, type: 3}
-  ribbonPosition: {x: 0, y: 0}
+  ribbonPosition: {x: 0, y: -30}
   ribbonSprites:
   - {fileID: 2033946000, guid: 19a078e82201745f3ad11b4e1dc5538f, type: 3}
   - {fileID: -1401383622, guid: 19a078e82201745f3ad11b4e1dc5538f, type: 3}

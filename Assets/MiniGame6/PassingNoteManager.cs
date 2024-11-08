@@ -6,6 +6,7 @@ public class PassingNoteManager : MonoBehaviour
     public GameStage currentStage = GameStage.Stage1;
 
     public SequencesManager sequencesManager; // Reference to SequencesManager for Stage 1
+    public Drawings drawingsScript; // Reference to Drawings script for Stage 2
 
     private void Start()
     {
@@ -15,6 +16,12 @@ public class PassingNoteManager : MonoBehaviour
     public void SetStage(GameStage stage)
     {
         currentStage = stage;
+
+        // Disable all stage scripts initially
+        if (sequencesManager != null) sequencesManager.enabled = false;
+        if (drawingsScript != null) drawingsScript.enabled = false;
+
+        // Activate only the script for the current stage
         switch (currentStage)
         {
             case GameStage.Stage1:
@@ -23,7 +30,15 @@ public class PassingNoteManager : MonoBehaviour
                     sequencesManager.enabled = true;
                 }
                 break;
-            // Add additional cases for other stages as needed
+
+            case GameStage.Stage2:
+                if (drawingsScript != null)
+                {
+                    drawingsScript.enabled = true;
+                }
+                break;
+
+            // Additional cases can be added for other stages as needed
             default:
                 Debug.LogWarning("Stage not defined for this game stage");
                 break;

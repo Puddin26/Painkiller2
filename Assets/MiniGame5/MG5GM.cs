@@ -10,6 +10,8 @@ public class MG5GM : MonoBehaviour
     public GameObject MG5text, MG5Part1, MG5Part2, MG5Part3, MG5Heart, MG5EndPanel;
     private SpriteRenderer MG5Panel;
 
+    public Follower follower;
+
     private void Start()
     {
         Invoke("HidePart", 0.2f);
@@ -104,6 +106,10 @@ public class MG5GM : MonoBehaviour
             if (MG5Panel.color.a <= 1)
             {
                 MG5Panel.color += new Color(0, 0, 0, 0.5f * Time.deltaTime);
+            }
+            else
+            {
+                follower.letsmove = true;
             }
         }
     }

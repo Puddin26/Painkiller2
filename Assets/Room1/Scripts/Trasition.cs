@@ -9,6 +9,7 @@ public class Trasition : MonoBehaviour
     public GameObject transition_square;
     public string scene_name;
     SpriteRenderer transition_sprite;
+    public Follower follower;
 
     // Start is called before the first frame update
     void Start()
@@ -23,10 +24,12 @@ public class Trasition : MonoBehaviour
         //print(transition_sprite.color.a);
 
 
-        if (Input.GetMouseButtonDown(0))
+        if(follower.letsmove)
         {
             can_transition = true;
+            follower.letsmove = false;
         }
+
 
         if(can_transition)
         {

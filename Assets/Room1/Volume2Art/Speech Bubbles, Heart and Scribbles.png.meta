@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -134,7 +134,469 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Speech Bubbles, Heart and Scribbles_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1463
+        width: 363
+        height: 287
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0065080b99b6b7446addadf157cc396d
+      internalID: 220531570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Speech Bubbles, Heart and Scribbles_1
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 1472
+        width: 338
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e8a0e088b9b3714999d7a4273f60860
+      internalID: -1977244645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Speech Bubbles, Heart and Scribbles_2
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 1472
+        width: 338
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a80ab2571b15eb4088b3263372bd7df
+      internalID: 800792646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Speech Bubbles, Heart and Scribbles_3
+      rect:
+        serializedVersion: 2
+        x: 1262
+        y: 1446
+        width: 363
+        height: 294
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8e66f274bb84b649bc8fcc78455e8cb
+      internalID: -1928844094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Speech Bubbles, Heart and Scribbles_4
+      rect:
+        serializedVersion: 2
+        x: 1674
+        y: 1454
+        width: 360
+        height: 279
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec7e73557845ad446821bada22bbfdad
+      internalID: 1192254301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Speech Bubbles, Heart and Scribbles_6
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1119
+        width: 363
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f0de08a32dae1846977c03ce9efda36
+      internalID: -1927785219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Speech Bubbles, Heart and Scribbles_7
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 1134
+        width: 363
+        height: 287
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05e6c85fbcff5c5489794dc6390d6ecb
+      internalID: 2111605064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Speech Bubbles, Heart and Scribbles_8
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 1146
+        width: 360
+        height: 279
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b591be32c4999c546962c3f694cbccb4
+      internalID: -1503546268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Speech Bubbles, Heart and Scribbles_9
+      rect:
+        serializedVersion: 2
+        x: 1241
+        y: 1141
+        width: 360
+        height: 279
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ca8647baaa4dcf4eb75ca22f4846186
+      internalID: -1705548901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Speech Bubbles, Heart and Scribbles_11
+      rect:
+        serializedVersion: 2
+        x: 1654
+        y: 1131
+        width: 361
+        height: 279
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73a7536804d50234f8eb8d05a7e7aa9d
+      internalID: -1653718534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Speech Bubbles, Heart and Scribbles_13
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 777
+        width: 360
+        height: 279
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c30c9c6fb04828941836f005adb3f50b
+      internalID: 864484424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Speech Bubbles, Heart and Scribbles_14
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 780
+        width: 359
+        height: 279
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68d157192dcec44499418c7e22cfcd2e
+      internalID: -673311021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Speech Bubbles, Heart and Scribbles_15
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 790
+        width: 360
+        height: 279
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdbaf408631f42a4f948ab845fbfdfbb
+      internalID: 988193015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Speech Bubbles, Heart and Scribbles_16
+      rect:
+        serializedVersion: 2
+        x: 1239
+        y: 805
+        width: 360
+        height: 279
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 590a4b059b30e1e4ab4abd92a6a3621d
+      internalID: 1145373664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Speech Bubbles, Heart and Scribbles_17
+      rect:
+        serializedVersion: 2
+        x: 1639
+        y: 808
+        width: 360
+        height: 279
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1026f2b1a3c746240a42f054e55eebb1
+      internalID: 1356081841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Speech Bubbles, Heart and Scribbles_25
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 443
+        width: 360
+        height: 279
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ca921d0bbd69ae4a861227ee66357ec
+      internalID: -189522505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Speech Bubbles, Heart and Scribbles_26
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 446
+        width: 359
+        height: 279
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb5207a65b0ca2a48a917691b7a5a06e
+      internalID: -498346862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Speech Bubbles, Heart and Scribbles_27
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 456
+        width: 360
+        height: 279
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77892af2150b43648ad6a2f7f15f9a4d
+      internalID: -1882134931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Speech Bubbles, Heart and Scribbles_29
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 447
+        width: 360
+        height: 279
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c9c338af94ce6140874c5e4d0e45f8b
+      internalID: 1946472250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Speech Bubbles, Heart and Scribbles_30
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 451
+        width: 360
+        height: 279
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb2672d8a2dce2949baec80ead2b417a
+      internalID: 1118944945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Speech Bubbles, Heart and Scribbles_33
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 67
+        width: 317
+        height: 350
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a19654d94692d674ea2fc163dd7046b3
+      internalID: -1068614131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Speech Bubbles, Heart and Scribbles_34
+      rect:
+        serializedVersion: 2
+        x: 1101
+        y: 91
+        width: 300
+        height: 295
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fba2888419adab9488befc78bda4db44
+      internalID: 1372683985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -145,7 +607,42 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Speech Bubbles, Heart and Scribbles_0: 220531570
+      Speech Bubbles, Heart and Scribbles_1: -1977244645
+      Speech Bubbles, Heart and Scribbles_10: -647809292
+      Speech Bubbles, Heart and Scribbles_11: -1653718534
+      Speech Bubbles, Heart and Scribbles_12: 1482085727
+      Speech Bubbles, Heart and Scribbles_13: 864484424
+      Speech Bubbles, Heart and Scribbles_14: -673311021
+      Speech Bubbles, Heart and Scribbles_15: 988193015
+      Speech Bubbles, Heart and Scribbles_16: 1145373664
+      Speech Bubbles, Heart and Scribbles_17: 1356081841
+      Speech Bubbles, Heart and Scribbles_18: -868219442
+      Speech Bubbles, Heart and Scribbles_19: -917098394
+      Speech Bubbles, Heart and Scribbles_2: 800792646
+      Speech Bubbles, Heart and Scribbles_20: 1309348972
+      Speech Bubbles, Heart and Scribbles_21: -977472534
+      Speech Bubbles, Heart and Scribbles_22: -1386651322
+      Speech Bubbles, Heart and Scribbles_23: -206516344
+      Speech Bubbles, Heart and Scribbles_24: -1297614795
+      Speech Bubbles, Heart and Scribbles_25: -189522505
+      Speech Bubbles, Heart and Scribbles_26: -498346862
+      Speech Bubbles, Heart and Scribbles_27: -1882134931
+      Speech Bubbles, Heart and Scribbles_28: 127762719
+      Speech Bubbles, Heart and Scribbles_29: 1946472250
+      Speech Bubbles, Heart and Scribbles_3: -1928844094
+      Speech Bubbles, Heart and Scribbles_30: 1118944945
+      Speech Bubbles, Heart and Scribbles_31: -566482385
+      Speech Bubbles, Heart and Scribbles_32: 451242146
+      Speech Bubbles, Heart and Scribbles_33: -1068614131
+      Speech Bubbles, Heart and Scribbles_34: 1372683985
+      Speech Bubbles, Heart and Scribbles_4: 1192254301
+      Speech Bubbles, Heart and Scribbles_5: -103511380
+      Speech Bubbles, Heart and Scribbles_6: -1927785219
+      Speech Bubbles, Heart and Scribbles_7: 2111605064
+      Speech Bubbles, Heart and Scribbles_8: -1503546268
+      Speech Bubbles, Heart and Scribbles_9: -1705548901
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

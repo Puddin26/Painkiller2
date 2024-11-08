@@ -9,6 +9,7 @@ public class Follower : MonoBehaviour
     private bool canMove;
     public bool nextPage;
     public GameObject arrow;
+    public bool letsmove;
 
 
     // Start is called before the first frame update
@@ -44,7 +45,7 @@ public class Follower : MonoBehaviour
         canMove = true;
         cameraShift -= 10;
         Camera.main.orthographic = true;
-        arrow.SetActive(false);
-        nextPage = false;
+        //arrow.SetActive(false);
+        //nextPage = false;
     }
 }

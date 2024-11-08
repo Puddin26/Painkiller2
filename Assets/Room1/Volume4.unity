@@ -5195,6 +5195,7 @@ GameObject:
   - component: {fileID: 61831147}
   - component: {fileID: 61831148}
   - component: {fileID: 61831149}
+  - component: {fileID: 61831150}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -5432,6 +5433,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &61831150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61831143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b9a9685d4fa6743b1574c6b6744968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  can_transition: 0
+  transition_square: {fileID: 592808326}
+  scene_name: MainMenuScene
+  follower: {fileID: 61831148}
+  Transition_time: 0.04
 --- !u!1 &117106802
 GameObject:
   m_ObjectHideFlags: 0
@@ -7020,6 +7038,7 @@ MonoBehaviour:
   - {fileID: 868084920}
   talk: 0
   final: {fileID: 21300000, guid: 10f75ebbc84cd9e4eba838fb9ab8fb0e, type: 3}
+  follower: {fileID: 61831148}
 --- !u!1 &438175122
 GameObject:
   m_ObjectHideFlags: 0
@@ -7639,6 +7658,90 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &592808326
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 592808328}
+  - component: {fileID: 592808327}
+  m_Layer: 0
+  m_Name: Transition_Suare
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &592808327
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592808326}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &592808328
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592808326}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.1021, y: -50.0139, z: -2.69}
+  m_LocalScale: {x: 18.0042, y: 10.1279, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &615317821
 GameObject:
   m_ObjectHideFlags: 0
@@ -12655,7 +12758,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: VOLUME 1
+  m_text: 'VOLUME 4
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d7bf0edaf634a5647b0e6beee81f8cba, type: 2}
   m_sharedMaterial: {fileID: 135584274579846588, guid: d7bf0edaf634a5647b0e6beee81f8cba, type: 2}
@@ -21132,3 +21237,4 @@ SceneRoots:
   - {fileID: 239873291}
   - {fileID: 1856587289}
   - {fileID: 391425968}
+  - {fileID: 592808328}

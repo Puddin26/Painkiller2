@@ -427,7 +427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   can_transition: 0
   transition_square: {fileID: 56042896}
-  scene_name: Polish Scene
+  scene_name: Volume1
 --- !u!1 &1385217570
 GameObject:
   m_ObjectHideFlags: 0

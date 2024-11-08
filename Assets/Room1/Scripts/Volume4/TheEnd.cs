@@ -9,6 +9,7 @@ public class TheEnd : MonoBehaviour
     private int randomNumber2;
     public bool talk;
     [SerializeField] Sprite final;
+    public Follower follower;
 
     private void Start()
     {
@@ -25,6 +26,7 @@ public class TheEnd : MonoBehaviour
     {
         if(talk)
         {
+            follower.letsmove = true;
             gameObject.GetComponent<SpriteRenderer>().sprite = final;
 
             randomNumber = Random.Range(0, set1.Length - 1);
@@ -42,6 +44,5 @@ public class TheEnd : MonoBehaviour
             set1[randomNumber2].SetActive(true);
         }
     }
-
 
 }

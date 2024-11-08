@@ -64,6 +64,8 @@ public class DialogueManager : MonoBehaviour
             dialogueContainer.sizeDelta = new Vector2(dialogueContainer.sizeDelta.x, cumulativeHeight + 0.5f);
 
             currentBubbleIndex++;
+
+            if(currentBubbleIndex == 6) { print("hello"); }
         }
     }
 

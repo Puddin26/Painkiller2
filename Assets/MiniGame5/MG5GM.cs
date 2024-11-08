@@ -110,6 +110,7 @@ public class MG5GM : MonoBehaviour
             else
             {
                 follower.letsmove = true;
+                print("true");
             }
         }
     }

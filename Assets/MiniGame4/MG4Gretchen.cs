@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class MG4Gretchen : MonoBehaviour
 {
-    public GameObject MG4_Camera, MG4_Mathew, MG4_text;
+    public GameObject MG4_Camera, MG4_Mathew, NPCs, walker;
     public bool MG4_canInteract, MG4_isLocked;
     public float MG4_distance, MG4_Appear, MG4_walkSpeed;
+    public Follower followr;
 
     public Sprite turnaround;
 
@@ -16,7 +17,7 @@ public class MG4Gretchen : MonoBehaviour
     void Start()
     {
         MG4_mathewRenderer = MG4_Mathew.GetComponent<SpriteRenderer>();
-        Invoke("DeleteText", 5);
+        MG4_mathewRenderer.color = new Color(1, 1, 1, 0);
     }
 
     // Update is called once per frame
@@ -24,10 +25,7 @@ public class MG4Gretchen : MonoBehaviour
     {
         if(!MG4_isLocked)
         {
-            if (Input.GetKey(KeyCode.W)) { MG4_Camera.transform.Translate(Vector3.forward * MG4_walkSpeed * Time.deltaTime); }
-            if (Input.GetKey(KeyCode.S)) { MG4_Camera.transform.Translate(Vector3.back * MG4_walkSpeed * Time.deltaTime); }
-
-            if (Vector3.Distance(gameObject.transform.position, MG4_Camera.transform.position) < MG4_distance) { gameObject.GetComponent<SpriteRenderer>().color = Color.red; MG4_canInteract = true; }
+            if (Vector3.Distance(gameObject.transform.position, MG4_Camera.transform.position) < MG4_distance) { gameObject.GetComponent<SpriteRenderer>().color = Color.red; MG4_canInteract = true;  }
             else { MG4_canInteract = false; }
         }
         else
@@ -46,12 +44,18 @@ public class MG4Gretchen : MonoBehaviour
             MG4_isLocked = true;
             gameObject.GetComponent<SpriteRenderer>().sprite = turnaround;
             gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+            followr.nextPage = true;
+            Destroy(walker);
             print("Look Back");
         }
     }
 
-    private void DeleteText()
+    public void pressWalk()
     {
-        Destroy(MG4_text);
+        Camera.main.orthographic = false;
+        if (!MG4_isLocked)
+        {
+            NPCs.transform.Translate(Vector3.back * MG4_walkSpeed * Time.deltaTime);
+        }
     }
 }

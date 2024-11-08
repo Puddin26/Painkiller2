@@ -42,7 +42,8 @@ public class Follower : MonoBehaviour
     public void MoveDown()
     {
         canMove = true;
-        cameraShift -= 10; 
+        cameraShift -= 10;
+        Camera.main.orthographic = true;
         arrow.SetActive(false);
         nextPage = false;
     }

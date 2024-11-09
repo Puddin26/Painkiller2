@@ -3,22 +3,29 @@ using System.Collections.Generic;
 
 public class Touch_hand : MonoBehaviour
 {
-    public Transform objectA;
-    public Transform objectB;
-    public Vector3 initialPositionA;
-    public Vector3 initialPositionB;
+    public HingeJoint2D hingeA;
+    public HingeJoint2D hingeB;
     public float targetSpeed = 0.5f; // Target average click speed (clicks per second)
-    public float moveSpeed = 1f; // Speed at which objects move closer or farther
+    public float rotationSpeed = 100f; // Motor rotation speed when click speed is met
     public float timeWindow = 3f; // Time window for averaging click speed
+    public float returnSpeed = 100f; // Speed at which objects return to the default angle when idle
+    public float maxMotorTorque = 1000f; // Motor torque for rotation
+    public float defaultAngleA = 0f; // Default return angle for object A
+    public float defaultAngleB = 0f; // Default return angle for object B
+    
+    public GameObject objectA; // GameObject for the first arm
+    public GameObject objectB; // GameObject for the second arm
+    public GameObject newObjectToActivate; // GameObject to activate on collision
+
 
     private Queue<float> clickTimestamps = new Queue<float>();
     private bool objectsCollided = false;
 
     private void Start()
     {
-        // Set initial positions from Inspector
-        objectA.position = initialPositionA;
-        objectB.position = initialPositionB;
+        // Ensure motors are enabled
+        hingeA.useMotor = true;
+        hingeB.useMotor = true;
     }
 
     private void Update()
@@ -31,34 +38,65 @@ public class Touch_hand : MonoBehaviour
             clickTimestamps.Enqueue(Time.time);
         }
 
-        // Remove outdated clicks outside of the time window
+        // Remove outdated timestamps
         while (clickTimestamps.Count > 0 && Time.time - clickTimestamps.Peek() > timeWindow)
         {
             clickTimestamps.Dequeue();
         }
 
         // Calculate average click speed
-        float averageClickSpeed = clickTimestamps.Count / timeWindow;
+        float clickSpeed = clickTimestamps.Count / timeWindow;
 
-        // Move objects based on the average click speed
-        if (averageClickSpeed >= targetSpeed)
+        JointMotor2D motorA = hingeA.motor;
+        JointMotor2D motorB = hingeB.motor;
+
+        if (clickSpeed >= targetSpeed)
         {
-            // Move objects towards each other
-            objectA.position = Vector3.MoveTowards(objectA.position, objectB.position, moveSpeed * Time.deltaTime);
-            objectB.position = Vector3.MoveTowards(objectB.position, objectA.position, moveSpeed * Time.deltaTime);
-
-            // Check if objects have collided
-            if (Vector3.Distance(objectA.position, objectB.position) <= 0.01f)
-            {
-                objectsCollided = true;
-                Debug.Log("Objects hit each other!");
-            }
+            // Apply motor rotation in opposite directions based on click speed
+            motorA.motorSpeed = rotationSpeed;
+            motorA.maxMotorTorque = maxMotorTorque;
+            
+            motorB.motorSpeed = -rotationSpeed;
+            motorB.maxMotorTorque = maxMotorTorque;
         }
         else
         {
-            // Move objects back towards their initial positions
-            objectA.position = Vector3.MoveTowards(objectA.position, initialPositionA, moveSpeed * Time.deltaTime);
-            objectB.position = Vector3.MoveTowards(objectB.position, initialPositionB, moveSpeed * Time.deltaTime);
+            // Return to default angles
+            float angleDifferenceA = defaultAngleA - hingeA.jointAngle;
+            float angleDifferenceB = defaultAngleB - hingeB.jointAngle;
+
+            // Apply return speed towards the default angle
+            motorA.motorSpeed = angleDifferenceA * returnSpeed;
+            motorA.maxMotorTorque = maxMotorTorque;
+            
+            motorB.motorSpeed = angleDifferenceB * returnSpeed;
+            motorB.maxMotorTorque = maxMotorTorque;
+        }
+
+        hingeA.motor = motorA;
+        hingeB.motor = motorB;
+    }
+
+    public void HandleCollision()
+    {
+        if (!objectsCollided)
+        {
+            objectsCollided = true;
+
+            // Destroy both objects
+            Destroy(objectA);
+            Destroy(objectB);
+
+            // Activate the new object
+            if (newObjectToActivate != null)
+            {
+                newObjectToActivate.SetActive(true);
+                
+                //End of Game Here
+            }
         }
     }
+
+
+
 }

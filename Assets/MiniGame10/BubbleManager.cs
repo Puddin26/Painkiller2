@@ -38,7 +38,7 @@ public class BubbleManager : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                ResetGame();
             }
             return;
         }
@@ -62,6 +62,8 @@ public class BubbleManager : MonoBehaviour
         if (timer <= 0)
         {
             EndGame("You Win!");
+            
+            //End of Game Here
         }
 
         // Bubble spawn logic
@@ -78,7 +80,28 @@ public class BubbleManager : MonoBehaviour
             EndGame("Try Again");
         }
     }
+    
+    private void ResetGame()
+    {
+        // Reset timer and game state
+        timer = 30f;
+        spawnTimer = spawnInterval;
+        gameEnded = false;
+        phoneCallActive = false;
+        resultText.text = "";
+        countdownText.text = timer.ToString("F0");
 
+        // Clear active bubbles
+        foreach (GameObject bubble in activeBubbles)
+        {
+            Destroy(bubble);
+        }
+        activeBubbles.Clear();
+
+        // Reset phone state
+        SetPhoneState(false);
+        ScheduleNextPhoneCall();
+    }
 
     void CheckForDeclineButtonClick()
     {

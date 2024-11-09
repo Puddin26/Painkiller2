@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LineFollower : MonoBehaviour
 {
+    public PassingNoteManager passingNoteManager;
     public DrawLine lineDrawer; // Reference to the DrawLine script
     public float speed = 5f;
     private List<Vector3> points;
@@ -12,20 +13,14 @@ public class LineFollower : MonoBehaviour
     void Start()
     {
         points = new List<Vector3>();
-    }
-
-    void Update()
-    {
-        if (Input.GetMouseButtonUp(0)) // When the player finishes drawing
+        points = lineDrawer.GetPoints(); // Corrected the reference to the instance
+        currentPointIndex = 0;
+        StopAllCoroutines();
+        if (points.Count > 0)
         {
-            points = lineDrawer.GetPoints(); // Corrected the reference to the instance
-            currentPointIndex = 0;
-            StopAllCoroutines();
-            if (points.Count > 0)
-            {
-                StartCoroutine(FollowLine());
-            }
+            StartCoroutine(FollowLine());
         }
+        
     }
 
     IEnumerator FollowLine()
@@ -40,5 +35,6 @@ public class LineFollower : MonoBehaviour
             }
             currentPointIndex++;
         }
+        passingNoteManager.AdvanceToNextStage();
     }
 }

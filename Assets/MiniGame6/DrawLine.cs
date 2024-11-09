@@ -9,6 +9,9 @@ public class DrawLine : MonoBehaviour
     public Vector2 startPosition; // Starting position defined in Inspector
     public Vector2 endPosition; // Ending position defined in Inspector
     public float positionTolerance = 0.5f; // Tolerance range for start and end positions
+    public GameObject paperPlane;
+    
+    
 
     private List<Vector3> points = new List<Vector3>();
     private Camera mainCamera;
@@ -16,6 +19,7 @@ public class DrawLine : MonoBehaviour
 
     void Start()
     {
+        paperPlane.SetActive(false);
         mainCamera = Camera.main;
         if (lineRenderer == null)
         {
@@ -56,6 +60,7 @@ public class DrawLine : MonoBehaviour
             if (Vector2.Distance(mousePosition, endPosition) <= positionTolerance)
             {
                 isDrawing = false;
+                paperPlane.SetActive(true);
             }
             else
             {
@@ -68,6 +73,7 @@ public class DrawLine : MonoBehaviour
 
     public List<Vector3> GetPoints()
     {
+        Debug.Log(points.Count);
         return points;
     }
 }

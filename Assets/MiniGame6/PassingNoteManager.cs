@@ -5,8 +5,9 @@ public class PassingNoteManager : MonoBehaviour
     public enum GameStage { Stage1, Stage2, Stage3 /* Add more stages as needed */ }
     public GameStage currentStage = GameStage.Stage1;
 
-    public SequencesManager sequencesManager; // Reference to SequencesManager for Stage 1
-    public Drawings drawingsScript; // Reference to Drawings script for Stage 2
+    public GameObject stage1Object; // Object for Stage 1
+    public GameObject stage2Object; // Object for Stage 2
+    public GameObject stage3Object; // Object for Stage 3
 
     private void Start()
     {
@@ -17,24 +18,32 @@ public class PassingNoteManager : MonoBehaviour
     {
         currentStage = stage;
 
-        // Disable all stage scripts initially
-        if (sequencesManager != null) sequencesManager.enabled = false;
-        if (drawingsScript != null) drawingsScript.enabled = false;
+        // Deactivate all stage objects initially
+        if (stage1Object != null) stage1Object.SetActive(false);
+        if (stage2Object != null) stage2Object.SetActive(false);
+        if (stage3Object != null) stage3Object.SetActive(false);
 
-        // Activate only the script for the current stage
+        // Activate only the object for the current stage
         switch (currentStage)
         {
             case GameStage.Stage1:
-                if (sequencesManager != null)
+                if (stage1Object != null)
                 {
-                    sequencesManager.enabled = true;
+                    stage1Object.SetActive(true);
                 }
                 break;
 
             case GameStage.Stage2:
-                if (drawingsScript != null)
+                if (stage2Object != null)
                 {
-                    drawingsScript.enabled = true;
+                    stage2Object.SetActive(true);
+                }
+                break;
+
+            case GameStage.Stage3:
+                if (stage3Object != null)
+                {
+                    stage3Object.SetActive(true);
                 }
                 break;
 

@@ -8,14 +8,14 @@ public class SequencesManager : MonoBehaviour
     public float interval = 2f; // Time interval between sprite changes
     public float fadeDuration = 0.5f; // Duration of fade-in and fade-out
     public PassingNoteManager passingNoteManager; // Reference to PassingNoteManager to manage stage progression
-
+    
     private int currentSpriteIndex = 0;
 
     private void Start()
     {
         if (targetSpriteRenderer == null || sprites.Length == 0 || passingNoteManager == null)
         {
-            Debug.LogError("Please assign the SpriteRenderer, Sprites, DrawLine script, and PassingNoteManager in the Inspector.");
+            Debug.LogError("Please assign the SpriteRenderer, Sprites, DrawLine script, PassingNoteManager, and finalObject in the Inspector.");
             return;
         }
 
@@ -24,6 +24,7 @@ public class SequencesManager : MonoBehaviour
         {
             targetSpriteRenderer.gameObject.SetActive(true);
         }
+        
 
         StartCoroutine(SpriteChangeRoutine());
     }
@@ -42,6 +43,7 @@ public class SequencesManager : MonoBehaviour
 
             // Change sprite
             targetSpriteRenderer.sprite = sprites[currentSpriteIndex];
+
             currentSpriteIndex++;
 
             // Fade-in

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dfe7320253e854848af8c69361f54be0
+guid: b496d450bd1d4f44ba1578089000481b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -21,7 +21,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_5205_0
+      name: Icons_0
       rect:
         serializedVersion: 2
-        x: 24
-        y: 399
-        width: 572
-        height: 331
+        x: 44
+        y: 60
+        width: 114
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,104 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1579ec64566a5794f87b51af55488074
-      internalID: 1978250494
+      spriteID: af6f3284fbf1b0d48bfe23ebce90485f
+      internalID: -1382852559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_5205_1
+      name: Icons_1
       rect:
         serializedVersion: 2
-        x: 644
-        y: 399
-        width: 572
-        height: 331
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0a7e8082f628a9f43adacfa91196ccf1
-      internalID: 1397926577
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_5205_2
-      rect:
-        serializedVersion: 2
-        x: 1256
-        y: 399
-        width: 572
-        height: 331
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a930ce64a6861764aba2be8839622c1b
-      internalID: -352834327
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_5205_3
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 56
-        width: 572
-        height: 331
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 651d9556498cef44bab3bae1bdba05af
-      internalID: 2093490830
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_5205_4
-      rect:
-        serializedVersion: 2
-        x: 645
-        y: 56
-        width: 572
-        height: 331
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 37aac3ce6b3880f4daa0dcf509d75b30
-      internalID: 813445584
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_5205_5
-      rect:
-        serializedVersion: 2
-        x: 1247
+        x: 201
         y: 57
-        width: 572
-        height: 334
+        width: 114
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,8 +145,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: effbb310a8890954e9676515814e3315
-      internalID: -1752145054
+      spriteID: f2743574ef6b6f84f8f17da4b840f2cf
+      internalID: -270945163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons_2
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 36
+        width: 117
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 363341c7385bb6c44a693a7283886663
+      internalID: 145552488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons_3
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 24
+        width: 136
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2253b1e08044f34f9738057da0a83a0
+      internalID: -1158613152
       vertices: []
       indices: 
       edges: []
@@ -246,12 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      IMG_5205_0: 1978250494
-      IMG_5205_1: 1397926577
-      IMG_5205_2: -352834327
-      IMG_5205_3: 2093490830
-      IMG_5205_4: 813445584
-      IMG_5205_5: 1779533944
+      Icons_0: -1382852559
+      Icons_1: -270945163
+      Icons_2: 145552488
+      Icons_3: -1158613152
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

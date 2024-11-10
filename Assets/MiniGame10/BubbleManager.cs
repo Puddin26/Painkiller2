@@ -43,8 +43,7 @@ public class BubbleManager : MonoBehaviour
         {
             if(!startCall)
             {
-                ScheduleNextPhoneCall();
-                startCall = true;
+
             }
 
             if (gameEnded)
@@ -73,10 +72,7 @@ public class BubbleManager : MonoBehaviour
             //timer -= Time.deltaTime;
             //countdownText.text = Mathf.Ceil(timer).ToString();
 
-            if (timer <= 0)
-            {
-                EndGame("You Win!");
-            }
+
 
             // Bubble spawn logic
             spawnTimer -= Time.deltaTime;
@@ -93,7 +89,28 @@ public class BubbleManager : MonoBehaviour
             }
         }
     }
+    
+    private void ResetGame()
+    {
+        // Reset timer and game state
+        timer = 30f;
+        spawnTimer = spawnInterval;
+        gameEnded = false;
+        phoneCallActive = false;
+        resultText.text = "";
+        countdownText.text = timer.ToString("F0");
 
+        // Clear active bubbles
+        foreach (GameObject bubble in activeBubbles)
+        {
+            Destroy(bubble);
+        }
+        activeBubbles.Clear();
+
+        // Reset phone state
+        SetPhoneState(false);
+        ScheduleNextPhoneCall();
+    }
 
     void CheckForDeclineButtonClick()
     {

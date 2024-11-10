@@ -103,6 +103,8 @@ public class MG5GM : MonoBehaviour
         }
         else
         {
+            MG5text.SetActive(false);
+
             if (MG5Panel.color.a <= 1)
             {
                 MG5Panel.color += new Color(0, 0, 0, 0.5f * Time.deltaTime);
@@ -117,7 +119,7 @@ public class MG5GM : MonoBehaviour
 
     void NextPart()
     {
-        if(Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetMouseButtonDown(1) && Camera.main.transform.position.y < -49f)
         {
             if(!isMG5Part2Done)
             {

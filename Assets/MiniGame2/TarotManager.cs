@@ -10,6 +10,10 @@ public class TarotManager : SnapManager
     //References
     public GameObject note;
     public Sprite finishedNote;
+
+    public Room1.CharacterMover characterMover;
+
+    public GameObject Acraba_BG, cards, atexts, noter;
     
     protected override void HandleObjectSnapped(SimplifiedObjectMoveAndSnap snappedObject)
     {
@@ -27,6 +31,15 @@ public class TarotManager : SnapManager
             {
                 note.GetComponent<SpriteRenderer>().sprite = finishedNote;
             }
+
+            Acraba_BG.SetActive(false);
+            cards.SetActive(false);
+            atexts.SetActive(false);
+            noter.SetActive(false);
+
+            characterMover.tableDone = 2;
+
+
         }
     }
 }

@@ -18,6 +18,8 @@ public class DialogueManager : MonoBehaviour
     private int currentBubbleIndex = 0;
     private float cumulativeHeight = 0; // Track the total height of all bubbles
 
+    public Follower follower;
+
     void Start()
     {
         ShowNextBubble();
@@ -65,7 +67,7 @@ public class DialogueManager : MonoBehaviour
 
             currentBubbleIndex++;
 
-            if(currentBubbleIndex == 6) { print("hello"); }
+            if(currentBubbleIndex == 6 && gameObject.name == "DialogueManager2(Clone)") { follower.letsmove = true; }
         }
     }
 
@@ -94,6 +96,7 @@ public class DialogueManager : MonoBehaviour
             if (RectTransformUtility.RectangleContainsScreenPoint(Clickable, Input.mousePosition, Camera.main))
             {
                 ShowNextBubble();
+                AudioManager.instance.TarotDialogue();
             }
         }
     }

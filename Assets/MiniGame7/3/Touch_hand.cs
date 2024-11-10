@@ -5,6 +5,7 @@ public class Touch_hand : MonoBehaviour
 {
     public Transform objectA;
     public Transform objectB;
+    public GameObject handA, handB, handAA, handBB;
     public Vector3 initialPositionA;
     public Vector3 initialPositionB;
     public float targetSpeed = 0.5f; // Target average click speed (clicks per second)
@@ -14,11 +15,15 @@ public class Touch_hand : MonoBehaviour
     private Queue<float> clickTimestamps = new Queue<float>();
     private bool objectsCollided = false;
 
+    public Follower follower;
+
     private void Start()
     {
         // Set initial positions from Inspector
         objectA.position = initialPositionA;
         objectB.position = initialPositionB;
+        handA.SetActive(false);
+        handB.SetActive(false);
     }
 
     private void Update()
@@ -51,7 +56,12 @@ public class Touch_hand : MonoBehaviour
             if (Vector3.Distance(objectA.position, objectB.position) <= 0.01f)
             {
                 objectsCollided = true;
+                handA.SetActive(true);
+                handB.SetActive(true);
+                handAA.SetActive(false);
+                handBB.SetActive(false);
                 Debug.Log("Objects hit each other!");
+                follower.nextPage = true;
             }
         }
         else

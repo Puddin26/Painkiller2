@@ -46,6 +46,16 @@ public class Bubble : MonoBehaviour
         }
     }
 
+    private void OnMouseDown()
+    {
+        if (bubbleManager.IsPhoneCallActive())
+        {
+            return; // Do nothing if phone call is active
+        }
+
+        bubbleManager.RemoveBubble(gameObject); // Destroy the bubble if clicked and no phone call
+    }
+
     // Method to set the BubbleManager reference
     public void SetManager(BubbleManager manager)
     {

@@ -33,7 +33,7 @@ public class DrawLine : MonoBehaviour
     void Update()
     {
         Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        mousePosition.z = 0f;
+        mousePosition.z = -5f;
 
         // Start drawing only if the mouse is near the start position
         if (Input.GetMouseButtonDown(0) && Vector2.Distance(mousePosition, startPosition) <= positionTolerance)

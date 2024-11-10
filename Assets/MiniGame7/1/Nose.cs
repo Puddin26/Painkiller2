@@ -13,11 +13,15 @@ public class Nose : MonoBehaviour
     private bool isFirstClick = false;
     private SpriteRenderer spriteRenderer; // Reference to the object's own SpriteRenderer
 
+    public Follower follower;
+    public GameObject part2er;
+
     private void Start()
     {
         // Get the SpriteRenderer and make the object initially invisible
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.enabled = false;
+        part2er.SetActive(false);
     }
 
     private void Update()
@@ -87,7 +91,10 @@ public class Nose : MonoBehaviour
             if (noseSpriteRenderer != null)
             {
                 noseSpriteRenderer.sprite = secondSprite;
+                part2er.SetActive(true);
             }
         }
+
+        Destroy(gameObject);
     }
 }

@@ -13,6 +13,7 @@ public class CardManager : MonoBehaviour
     {
         ArrangeCards();
         SetCardClickable(currentIndex);  // Enable only the first card at the start
+        AudioManager.instance.TarotReadingTheme();
     }
 
     void ArrangeCards()
@@ -27,6 +28,8 @@ public class CardManager : MonoBehaviour
 
     public void CardClicked(GameObject card)
     {
+        AudioManager.instance.FlipCard();
+
         // Close the current conversation window if it exists
         if (currentConversationWindow != null)
         {

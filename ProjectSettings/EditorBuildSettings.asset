@@ -6,32 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/MiniGameMenu/MainMenuButton.unity
-    guid: 68554e6cdce5ecd49b9f12930714865f
-  - enabled: 1
-    path: Assets/MiniGame1/PlayTarot.unity
-    guid: 2ddf7a41bd240744186d2fe573b9b958
-  - enabled: 1
-    path: Assets/MiniGame2/MiniGame2.unity
-    guid: 09219c5224350a14aa92c6b01f9c909a
-  - enabled: 1
-    path: Assets/MiniGame3/MiniGame3.unity
-    guid: 8af0231bac78ccd449058492b84f646f
-  - enabled: 1
-    path: Assets/MiniGame4/MiniGame4.unity
-    guid: aac36bb145d6b6c4f949d54d861d2ea0
-  - enabled: 1
-    path: Assets/MiniGame5/MiniGame5.unity
-    guid: bc00d01261ec0e64790f948fc27fec27
-  - enabled: 1
-    path: Assets/MiniGame6/Game6.unity
-    guid: a5df66a135f06ae4291f49a4528450ac
-  - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
     path: Assets/Room1/MainMenuScene.unity
     guid: 508f571b790e0784cb652d27f9daaf1d
+  - enabled: 1
+    path: Assets/Room1/Prologue.unity
+    guid: e070420115f7df443935e5d468f73f84
   - enabled: 1
     path: Assets/Room1/Volume1.unity
     guid: 4cecc92257c95954e97034ce24aa6c97

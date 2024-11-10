@@ -18,66 +18,75 @@ public class BubbleManager : MonoBehaviour
     public float declineButtonRadius = 0.5f;
 
     private List<GameObject> activeBubbles = new List<GameObject>();
-    private float timer = 30f;
+    private float timer = 15f;
     private float spawnTimer;
     private bool gameEnded = false;
     private bool phoneCallActive = false;
     private float nextPhoneCallTime;
 
+    public bool startCall;
+
+    public Follower follower;
+
     void Start()
     {
         spawnTimer = spawnInterval;
         resultText.text = "";
-        ScheduleNextPhoneCall();
+        //ScheduleNextPhoneCall();
         SetPhoneState(false); // Start with phone off
     }
 
+
     void Update()
     {
-        if (gameEnded)
+        if (Camera.main.transform.position.y < -29.5)
         {
-            if (Input.GetMouseButtonDown(0))
+            if(!startCall)
             {
-                ResetGame();
+
             }
-            return;
-        }
 
-        // Handle phone call detection if active
-        if (phoneCallActive)
-        {
-            CheckForDeclineButtonClick();
-        }
+            if (gameEnded)
+            {
+                //if (Input.GetMouseButtonDown(0))
+                //{
+                //    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                //}
+                follower.nextPage = true;
+                return;
+            }
 
-        // Check for incoming phone calls
-        if (Time.time >= nextPhoneCallTime && !phoneCallActive)
-        {
-            ReceivePhoneCall();
-        }
+            // Handle phone call detection if active
+            if (phoneCallActive)
+            {
+                CheckForDeclineButtonClick();
+            }
 
-        // Countdown timer
-        timer -= Time.deltaTime;
-        countdownText.text = Mathf.Ceil(timer).ToString();
+            // Check for incoming phone calls
+            if (Time.time >= nextPhoneCallTime && !phoneCallActive)
+            {
+                ReceivePhoneCall();
+            }
 
-        if (timer <= 0)
-        {
-            EndGame("You Win!");
-            
-            //End of Game Here
-        }
+            // Countdown timer
+            //timer -= Time.deltaTime;
+            //countdownText.text = Mathf.Ceil(timer).ToString();
 
-        // Bubble spawn logic
-        spawnTimer -= Time.deltaTime;
-        if (spawnTimer <= 0)
-        {
-            SpawnBubble();
-            spawnTimer = spawnInterval;
-        }
 
-        // Check for game over condition (list is full)
-        if (activeBubbles.Count >= spawnPositions.Count)
-        {
-            EndGame("Try Again");
+
+            // Bubble spawn logic
+            spawnTimer -= Time.deltaTime;
+            if (spawnTimer <= 0 && activeBubbles.Count <= spawnPositions.Count)
+            {
+                SpawnBubble();
+                spawnTimer = spawnInterval;
+            }
+
+            // Check for game over condition (list is full)
+            if (activeBubbles.Count >= spawnPositions.Count)
+            {
+                //EndGame("Try Again");
+            }
         }
     }
     
@@ -140,7 +149,7 @@ public class BubbleManager : MonoBehaviour
     void ScheduleNextPhoneCall()
     {
         // Schedule the next phone call to happen in 2 to 6 seconds
-        nextPhoneCallTime = Time.time + Random.Range(2f, 6f);
+        nextPhoneCallTime = Time.time + Random.Range(4f, 6f);
     }
     
     public bool IsPhoneCallActive()
@@ -186,6 +195,8 @@ public class BubbleManager : MonoBehaviour
     {
         if (activeBubbles.Contains(bubble))
         {
+            timer -= 1;
+            countdownText.text = Mathf.Ceil(timer).ToString();
             activeBubbles.Remove(bubble);
             Destroy(bubble);
         }

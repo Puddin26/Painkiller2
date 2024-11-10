@@ -30,6 +30,11 @@ public class Trasition : MonoBehaviour
             follower.letsmove = false;
         }
 
+        if(SceneManager.GetSceneByName("MainMenuScene").isLoaded && Input.GetMouseButton(0))
+        {
+            follower.letsmove = true;
+        }
+
 
         if(can_transition)
         {

@@ -19,6 +19,7 @@ public class CharacterMover : MonoBehaviour
     private void OnMouseDrag()
     {
         lineDrawer.UpdateLine();
+        AudioManager.instance.ScribbleNotes();
     }
 
     private void OnMouseOver()

@@ -20,6 +20,8 @@ public class GiftManager : SnapManager
     
     public int CurrentStage => currentStage; // Exposes currentStage as a read-only property
 
+    public Follower follower;
+
     protected override void HandleObjectSnapped(SimplifiedObjectMoveAndSnap snappedObject)
     {
         if (currentStage == 0 && wrapPapers.Contains(snappedObject))
@@ -78,6 +80,7 @@ public class GiftManager : SnapManager
         if (noteObject != null && completedNoteSprite != null)
         {
             noteObject.GetComponent<SpriteRenderer>().sprite = completedNoteSprite;
+            follower.nextPage = true;
         }
     }
 

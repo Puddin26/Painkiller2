@@ -9,9 +9,17 @@ public class PassingNoteManager : MonoBehaviour
     public GameObject stage2Object; // Object for Stage 2
     public GameObject stage3Object; // Object for Stage 3
 
-    private void Start()
+    public Follower follower;
+
+    public bool startStage;
+
+    private void Update()
     {
-        SetStage(currentStage);
+        if (Camera.main.transform.position.y < -29 && !startStage)
+        {
+            SetStage(currentStage);
+            startStage = true;
+        }
     }
 
     public void SetStage(GameStage stage)
@@ -64,6 +72,7 @@ public class PassingNoteManager : MonoBehaviour
         else
         {
             Debug.Log("Final stage reached");
+            follower.nextPage = true;
         }
     }
 }

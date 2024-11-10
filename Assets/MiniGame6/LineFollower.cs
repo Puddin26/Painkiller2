@@ -9,6 +9,7 @@ public class LineFollower : MonoBehaviour
     public float speed = 5f;
     private List<Vector3> points;
     private int currentPointIndex = 0;
+    private bool islining;
 
     void Start()
     {
@@ -31,10 +32,20 @@ public class LineFollower : MonoBehaviour
             while (Vector3.Distance(transform.position, targetPoint) > 0.1f)
             {
                 transform.position = Vector3.MoveTowards(transform.position, targetPoint, speed * Time.deltaTime);
-                yield return null;
+                print(currentPointIndex);
             }
             currentPointIndex++;
+            yield return new WaitForSeconds(0.1f);
         }
         passingNoteManager.AdvanceToNextStage();
+    }
+
+    private void Update()
+    {
+        if (points.Count > 0 && !islining)
+        {
+            StartCoroutine(FollowLine());
+            islining = true;
+        }
     }
 }

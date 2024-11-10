@@ -3,8 +3,7 @@ using System.Collections.Generic;
 
 public class Touch_hand : MonoBehaviour
 {
-    public HingeJoint2D hingeA;
-    public HingeJoint2D hingeB;
+
     public float targetSpeed = 0.5f; // Target average click speed (clicks per second)
     public float rotationSpeed = 100f; // Motor rotation speed when click speed is met
     public float timeWindow = 3f; // Time window for averaging click speed
@@ -21,11 +20,11 @@ public class Touch_hand : MonoBehaviour
     private Queue<float> clickTimestamps = new Queue<float>();
     private bool objectsCollided = false;
 
+    public Follower follower;
+
     private void Start()
     {
-        // Ensure motors are enabled
-        hingeA.useMotor = true;
-        hingeB.useMotor = true;
+
     }
 
     private void Update()
@@ -50,14 +49,7 @@ public class Touch_hand : MonoBehaviour
         JointMotor2D motorA = hingeA.motor;
         JointMotor2D motorB = hingeB.motor;
 
-        if (clickSpeed >= targetSpeed)
-        {
-            // Apply motor rotation in opposite directions based on click speed
-            motorA.motorSpeed = rotationSpeed;
-            motorA.maxMotorTorque = maxMotorTorque;
-            
-            motorB.motorSpeed = -rotationSpeed;
-            motorB.maxMotorTorque = maxMotorTorque;
+
         }
         else
         {

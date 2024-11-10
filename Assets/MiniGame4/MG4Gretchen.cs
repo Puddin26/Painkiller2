@@ -13,6 +13,8 @@ public class MG4Gretchen : MonoBehaviour
 
     private SpriteRenderer MG4_mathewRenderer;
 
+    private bool isStopped;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,13 @@ public class MG4Gretchen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Camera.main.transform.position.y < -39)
+        {
+            if(!isStopped) { AudioManager.instance.StopAllMusic(); isStopped = true; }
+            AudioManager.instance.HallwayTheme();
+            AudioManager.instance.Walking();
+        }
+
         if(!MG4_isLocked)
         {
             if (Vector3.Distance(gameObject.transform.position, MG4_Camera.transform.position) < MG4_distance) { gameObject.GetComponent<SpriteRenderer>().color = Color.red; MG4_canInteract = true;  }
@@ -47,6 +56,7 @@ public class MG4Gretchen : MonoBehaviour
             followr.nextPage = true;
             Destroy(walker);
             print("Look Back");
+            AudioManager.instance.LookBack();
         }
     }
 

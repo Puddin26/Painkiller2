@@ -16,6 +16,8 @@ public class Nose : MonoBehaviour
     public Follower follower;
     public GameObject part2er;
 
+    private bool isStopped;
+
     private void Start()
     {
         // Get the SpriteRenderer and make the object initially invisible
@@ -26,6 +28,12 @@ public class Nose : MonoBehaviour
 
     private void Update()
     {
+
+        if (Camera.main.transform.position.y < -38)
+        {
+            if (!isStopped) { AudioManager.instance.StopAllMusic(); isStopped = true; }
+        }
+
         // Check if the mouse button is clicked
         if (Input.GetMouseButtonDown(0))
         {
@@ -91,6 +99,7 @@ public class Nose : MonoBehaviour
             if (noseSpriteRenderer != null)
             {
                 noseSpriteRenderer.sprite = secondSprite;
+                AudioManager.instance.Laughing();
                 part2er.SetActive(true);
             }
         }

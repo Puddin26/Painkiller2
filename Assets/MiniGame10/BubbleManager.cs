@@ -28,6 +28,8 @@ public class BubbleManager : MonoBehaviour
 
     public Follower follower;
 
+    private bool isStopped;
+
     void Start()
     {
         spawnTimer = spawnInterval;
@@ -39,11 +41,20 @@ public class BubbleManager : MonoBehaviour
 
     void Update()
     {
-        if (Camera.main.transform.position.y < -29.5)
+
+        if (Camera.main.transform.position.y < -38)
+        {
+            if (!isStopped) { AudioManager.instance.StopAllMusic(); isStopped = true; }
+            AudioManager.instance.MuffledTalk();
+        }
+
+        if (Camera.main.transform.position.y < -39.5)
         {
             if(!startCall)
             {
-
+                //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                ScheduleNextPhoneCall();
+                startCall = true;
             }
 
             if (gameEnded)
@@ -83,9 +94,9 @@ public class BubbleManager : MonoBehaviour
             }
 
             // Check for game over condition (list is full)
-            if (activeBubbles.Count >= spawnPositions.Count)
+            if (timer <= 0)
             {
-                //EndGame("Try Again");
+                EndGame("You Win!");
             }
         }
     }
@@ -130,6 +141,7 @@ public class BubbleManager : MonoBehaviour
     {
         phoneCallActive = true;
         SetPhoneState(true); // Change to phone call state
+        AudioManager.instance.Vibrate();
     }
 
     void DeclinePhoneCall()
@@ -137,6 +149,7 @@ public class BubbleManager : MonoBehaviour
         phoneCallActive = false;
         SetPhoneState(false); // Change back to phone off state
         ScheduleNextPhoneCall(); // Schedule the next phone call
+        AudioManager.instance.EndCall();
     }
 
     void SetPhoneState(bool isActive)
@@ -197,6 +210,7 @@ public class BubbleManager : MonoBehaviour
         {
             timer -= 1;
             countdownText.text = Mathf.Ceil(timer).ToString();
+            AudioManager.instance.Poping();
             activeBubbles.Remove(bubble);
             Destroy(bubble);
         }

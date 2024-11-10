@@ -95,6 +95,7 @@ public class SimplifiedObjectMoveAndSnap1 : MonoBehaviour
         {
             transform.position = new Vector3(closestPosition.x, closestPosition.y, 0f);
             snapped = true;
+            AudioManager.instance.Sticker();
             OnObjectSnapped?.Invoke(this);
             CaManager.numnum++;
         }

@@ -10,6 +10,7 @@ public class TheEnd : MonoBehaviour
     public bool talk;
     [SerializeField] Sprite final;
     public Follower follower;
+    [SerializeField] GameObject Scribble, Heart;
 
     private void Start()
     {
@@ -17,6 +18,10 @@ public class TheEnd : MonoBehaviour
         {
             item.gameObject.SetActive(false);
         }
+
+
+        Scribble.SetActive(false);
+        Heart.SetActive(false);
 
         InvokeRepeating("Endgame", 2, 2);
     }
@@ -40,6 +45,7 @@ public class TheEnd : MonoBehaviour
                 randomNumber2 = Random.Range(0, set1.Length - 1);
             }
 
+            AudioManager.instance.Poping();
             set1[randomNumber].SetActive(true);
             set1[randomNumber2].SetActive(true);
         }

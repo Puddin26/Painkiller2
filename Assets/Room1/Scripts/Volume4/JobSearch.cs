@@ -13,10 +13,16 @@ public class JobSearch : MonoBehaviour
     public void Apply(GameObject button)
     {
         jobs++;
+        AudioManager.instance.Apply();
         button.GetComponent<Image>().sprite = applied;
         if (jobs == job_total)
         {
             follower.nextPage = true;
         }
+    }
+
+    public void Scroller()
+    {
+        AudioManager.instance.Scroll();
     }
 }

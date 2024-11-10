@@ -24,23 +24,23 @@ public class Trasition : MonoBehaviour
     {
         //print(transition_sprite.color.a);
 
-        if(follower.letsmove)
+        if (follower.letsmove)
         {
             can_transition = true;
             follower.letsmove = false;
         }
 
-        if(SceneManager.GetSceneByName("MainMenuScene").isLoaded && Input.GetMouseButton(0))
+        if (SceneManager.GetSceneByName("MainMenuScene").isLoaded && Input.GetMouseButton(0))
         {
             follower.letsmove = true;
         }
 
 
-        if(can_transition)
+        if (can_transition)
         {
             transition_sprite.color += new Color(0f, 0f, 0f, Transition_time * Time.deltaTime);
         }
-        if(transition_sprite.color.a >= 1) 
+        if (transition_sprite.color.a >= 1)
         {
             SceneManager.LoadScene(scene_name);
             print("lOADED");

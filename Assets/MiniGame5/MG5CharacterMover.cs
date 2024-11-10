@@ -14,6 +14,7 @@ public class MG5CharacterMover : MonoBehaviour
     private void OnMouseDrag()
     {
         lineDrawer.UpdateLine();
+        AudioManager.instance.ScribbleNotes();
     }
 
     private void OnMouseOver()

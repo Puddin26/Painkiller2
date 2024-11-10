@@ -35,6 +35,7 @@ public class PackUp : MonoBehaviour
             else
             {
                 transform.position = new Vector3(snap_position.x, snap_position.y, transform.position.z - order);
+                AudioManager.instance.Pack();
                 current_order++;
                 locked = true;
             }

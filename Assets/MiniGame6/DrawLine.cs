@@ -10,8 +10,8 @@ public class DrawLine : MonoBehaviour
     public Vector2 endPosition; // Ending position defined in Inspector
     public float positionTolerance = 0.5f; // Tolerance range for start and end positions
     public GameObject paperPlane;
-    
-    
+
+    private bool isStopped;
 
     private List<Vector3> points = new List<Vector3>();
     private Camera mainCamera;
@@ -32,6 +32,14 @@ public class DrawLine : MonoBehaviour
 
     void Update()
     {
+
+        if (Camera.main.transform.position.y < -28)
+        {
+            if (!isStopped) { AudioManager.instance.StopAllMusic(); isStopped = true; }
+            AudioManager.instance.TakingNotesTheme();
+            print("true");
+        }
+
         Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = -5f;
 
@@ -48,6 +56,7 @@ public class DrawLine : MonoBehaviour
         {
             if (points.Count == 0 || Vector3.Distance(mousePosition, points[points.Count - 1]) >= pointSpacing)
             {
+                AudioManager.instance.ScribbleNotes();
                 points.Add(mousePosition);
                 lineRenderer.positionCount = points.Count;
                 lineRenderer.SetPosition(points.Count - 1, mousePosition);

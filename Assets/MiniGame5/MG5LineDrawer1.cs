@@ -21,9 +21,6 @@ public class MG5LineDrawer1 : MonoBehaviour
         MG5_line = GetComponent<LineRenderer>();
         MG5_line.positionCount = 1;
         MG5_previousPosition = transform.position;
-
-        Scribble.SetActive(false);
-        Heart.SetActive(false);
     }
 
     public void StartLine(Vector2 position)
@@ -44,6 +41,7 @@ public class MG5LineDrawer1 : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
+            AudioManager.instance.ScribbleNotes();
             Vector3 currentPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             currentPosition.z = -5;
 
@@ -78,6 +76,7 @@ public class MG5LineDrawer1 : MonoBehaviour
         if(EndisDrawing)
         {
             RanNum = Random.Range(0, 2);
+            AudioManager.instance.LinkCon();
             if(RanNum == 0) { Heart.SetActive(true); }
             else { Scribble.SetActive(true); }
             if(!IsInvoking("Dissapear")) { Invoke("Dissapear", 1); }

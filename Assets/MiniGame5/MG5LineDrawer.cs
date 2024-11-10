@@ -71,6 +71,7 @@ public class MG5LineDrawer : MonoBehaviour
             MG5_Reciever.GetComponent<MG5LineDrawer>().MG5_isConnected = true;
             MG5_Reciever.GetComponent<SpriteRenderer>().color = Color.black;
             print(MG5Manager.MG5CurrentGameobject.name);
+            AudioManager.instance.Confirmation1();
             print("Connected");
         }
         else if(!MG5_Reciever.GetComponent<MG5LineDrawer>().MG5_isConnected && MG5Manager.MG5CurrentGameobject != gameObject && MG5Manager.MG5CurrentGameobject != null)

@@ -21,6 +21,7 @@ public class TarotManager : SnapManager
         {
             snappedObjects.Add(snappedObject);
             snappedCount++;
+            AudioManager.instance.Confirmation1();
             arcanaText.text = $"Major Arcana ({snappedCount}/22)";
         }
 

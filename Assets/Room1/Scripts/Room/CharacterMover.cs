@@ -17,6 +17,8 @@ namespace Room1
         public GameObject Minigame2;
         public GameObject[] texter;
 
+        public bool isshuffle;
+
 
         private void Start()
         {
@@ -112,6 +114,7 @@ namespace Room1
             {
                 Minigame2.SetActive(false);
                 texter[0].SetActive(true);
+                if(!isshuffle) { AudioManager.instance.Shuffle(); isshuffle = true; }
             }
         }
 

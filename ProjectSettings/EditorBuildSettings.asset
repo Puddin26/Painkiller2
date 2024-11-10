@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Room1/Volume4.unity
     guid: 4e1c786d00b55814d88fd8d039126205
+  - enabled: 1
+    path: Assets/Room1/TheEnd.unity
+    guid: 1dc6d43a3657f694fa9a6a6f50678fc7
   m_configObjects: {}

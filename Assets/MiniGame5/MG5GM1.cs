@@ -13,6 +13,8 @@ public class MG5GM1 : MonoBehaviour
 
     public Follower follower;
 
+    private bool isStopped;
+
     private void Start()
     {
         Invoke("HidePart", 0.2f);
@@ -22,6 +24,13 @@ public class MG5GM1 : MonoBehaviour
 
     void Update()
     {
+        if(Camera.main.transform.position.y < -49 && !isStopped)
+        {
+            Camera.main.gameObject.GetComponent<AudioSource>().Stop();
+            Camera.main.gameObject.transform.GetChild(0).gameObject.GetComponent<AudioSource>().Play();
+            isStopped = true;
+        }
+
         Part1();
         Part2();
         Part3();

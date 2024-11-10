@@ -28,7 +28,7 @@ public class MG5LineDrawer2 : MonoBehaviour
         {
             MG5_line.positionCount = 1;
             MG5_line.SetPosition(0, position);
-            MG5Manager.MG5CurrentGameobject = this.gameObject;
+            MG5Manager1.MG5CurrentGameobject1 = this.gameObject;
         }
     }
 
@@ -40,7 +40,7 @@ public class MG5LineDrawer2 : MonoBehaviour
             Vector3 currentPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             currentPosition.z = 0;
 
-            if(Vector3.Distance(currentPosition, MG5_previousPosition) > MG5_minDistance && !MG5_isConnected && MG5Manager.MG5CanDraw)
+            if(Vector3.Distance(currentPosition, MG5_previousPosition) > MG5_minDistance && !MG5_isConnected && MG5Manager1.MG5CanDraw1)
             {
                 if(MG5_previousPosition == transform.position)
                 {
@@ -61,7 +61,7 @@ public class MG5LineDrawer2 : MonoBehaviour
 
     public void CheckLine()
     {
-        if(MG5_Reciever == MG5Manager.MG5CurrentGameobject && MG5Manager.MG5CanDraw)
+        if(MG5_Reciever == MG5Manager1.MG5CurrentGameobject1 && MG5Manager1.MG5CanDraw1)
         {
             if (!MG5_canDrawAnother)
             {
@@ -70,23 +70,24 @@ public class MG5LineDrawer2 : MonoBehaviour
             }
             MG5_Reciever.GetComponent<MG5LineDrawer2>().MG5_isConnected = true;
             MG5_Reciever.GetComponent<SpriteRenderer>().color = Color.black;
-            print(MG5Manager.MG5CurrentGameobject.name);
+            print(MG5Manager1.MG5CurrentGameobject1.name);
+            AudioManager.instance.LinkCon();
             print("Connected");
         }
-        else if(!MG5_Reciever.GetComponent<MG5LineDrawer2>().MG5_isConnected && MG5Manager.MG5CurrentGameobject != gameObject && MG5Manager.MG5CurrentGameobject != null)
+        else if(!MG5_Reciever.GetComponent<MG5LineDrawer2>().MG5_isConnected && MG5Manager1.MG5CurrentGameobject1 != gameObject && MG5Manager1.MG5CurrentGameobject1 != null)
         {
-            MG5LineDrawer2 CurrentLine = MG5Manager.MG5CurrentGameobject.GetComponent<MG5LineDrawer2>();
+            MG5LineDrawer2 CurrentLine = MG5Manager1.MG5CurrentGameobject1.GetComponent<MG5LineDrawer2>();
             CurrentLine.MG5_line.positionCount = 1;
-            CurrentLine.MG5_line.SetPosition(0, MG5Manager.MG5CurrentGameobject.transform.position);
-            MG5Manager.MG5CanDraw = false;
+            CurrentLine.MG5_line.SetPosition(0, MG5Manager1.MG5CurrentGameobject1.transform.position);
+            MG5Manager1.MG5CanDraw1 = false;
             print("WrongDot");
         }
-        else if(MG5Manager.MG5CurrentGameobject != gameObject && MG5Manager.MG5CurrentGameobject != null)
+        else if(MG5Manager1.MG5CurrentGameobject1 != gameObject && MG5Manager1.MG5CurrentGameobject1 != null)
         {
-            MG5LineDrawer2 CurrentLine = MG5Manager.MG5CurrentGameobject.GetComponent<MG5LineDrawer2>();
+            MG5LineDrawer2 CurrentLine = MG5Manager1.MG5CurrentGameobject1.GetComponent<MG5LineDrawer2>();
             CurrentLine.MG5_line.positionCount = 1;
-            CurrentLine.MG5_line.SetPosition(0, MG5Manager.MG5CurrentGameobject.transform.position);
-            MG5Manager.MG5CanDraw = false;
+            CurrentLine.MG5_line.SetPosition(0, MG5Manager1.MG5CurrentGameobject1.transform.position);
+            MG5Manager1.MG5CanDraw1 = false;
             print("WrongDot");
         }
     }

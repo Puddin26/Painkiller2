@@ -29,7 +29,7 @@ public class GiftManager : SnapManager
             base.HandleObjectSnapped(snappedObject);
             ChangeBoxSprite(snappedObject);  // Change box sprite based on wrap
             Destroy(snappedObject.gameObject);  // Remove snapped wrap paper
-            
+    
             currentStage = 1; // Move to the next stage
         }
         else if (currentStage == 1 && ribbons.Contains(snappedObject))
@@ -37,12 +37,13 @@ public class GiftManager : SnapManager
             base.HandleObjectSnapped(snappedObject);
             PlaceRibbonSprite(snappedObject);  // Place the specific ribbon sprite at the defined position
             Destroy(snappedObject.gameObject);  // Remove snapped ribbon
-            
+
             currentStage = 2; // Move to the final stage
         }
         else if (currentStage == 2 && snappedObject == birthdayCard)
         {
             base.HandleObjectSnapped(snappedObject);
+            
             ChangeNoteSprite();  // Change note sprite when all stages are done
         }
         else
@@ -56,6 +57,7 @@ public class GiftManager : SnapManager
         int wrapIndex = wrapPapers.IndexOf(snappedObject);
         if (wrapIndex >= 0 && wrapIndex < wrapSprites.Count)
         {
+            AudioManager.instance.Wrap();
             boxObject.GetComponent<SpriteRenderer>().sprite = wrapSprites[wrapIndex];
         }
     }
@@ -72,6 +74,7 @@ public class GiftManager : SnapManager
             SpriteRenderer spriteRenderer = ribbonSpriteObject.AddComponent<SpriteRenderer>();
             spriteRenderer.sprite = ribbonSprites[ribbonIndex];
             spriteRenderer.sortingOrder = 1; // Set sorting order to ensure it renders above the box
+            AudioManager.instance.Tie();
         }
     }
 
@@ -80,6 +83,7 @@ public class GiftManager : SnapManager
         if (noteObject != null && completedNoteSprite != null)
         {
             noteObject.GetComponent<SpriteRenderer>().sprite = completedNoteSprite;
+            AudioManager.instance.Gift();
             follower.nextPage = true;
         }
     }

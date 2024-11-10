@@ -10,6 +10,11 @@ public class TheHand : MonoBehaviour
     [SerializeField] GameObject part2;
     public TheEnd theEnd;
 
+    private void Start()
+    {
+        part2.SetActive(false);
+    }
+
     private void OnMouseDrag()
     {
         Vector3 mousePosition = Input.mousePosition;
@@ -21,6 +26,13 @@ public class TheHand : MonoBehaviour
     {
         if (other.name == "Gretchen_hand_0")
         {
+            AudioManager.instance.LinkCon();
+            part2.SetActive(true);
+            part1.SetActive(false);
+        }
+        if (other.name == "Matthew_hand_0")
+        {
+            AudioManager.instance.LinkCon();
             theEnd.talk = true;
             part2.SetActive(true);
             part1.SetActive(false);

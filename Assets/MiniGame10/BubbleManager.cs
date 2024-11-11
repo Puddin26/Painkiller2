@@ -63,7 +63,6 @@ public class BubbleManager : MonoBehaviour
                 //{
                 //    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 //}
-                follower.nextPage = true;
                 return;
             }
 
@@ -96,7 +95,7 @@ public class BubbleManager : MonoBehaviour
             // Check for game over condition (list is full)
             if (timer <= 0)
             {
-                EndGame("You Win!");
+                EndGame("");
             }
         }
     }
@@ -219,6 +218,7 @@ public class BubbleManager : MonoBehaviour
     void EndGame(string message)
     {
         gameEnded = true;
+        follower.nextPage = true;
         resultText.text = message;
     }
 }

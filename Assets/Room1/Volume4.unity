@@ -13723,7 +13723,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Can't wait to graduate!
+  m_text: Its a mess, I have to pack up
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d7bf0edaf634a5647b0e6beee81f8cba, type: 2}
   m_sharedMaterial: {fileID: 135584274579846588, guid: d7bf0edaf634a5647b0e6beee81f8cba, type: 2}
@@ -25831,7 +25831,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: It's a mess. I have to pack up.
+  m_text: Oh, I still have her Tarot Card?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d7bf0edaf634a5647b0e6beee81f8cba, type: 2}
   m_sharedMaterial: {fileID: 135584274579846588, guid: d7bf0edaf634a5647b0e6beee81f8cba, type: 2}

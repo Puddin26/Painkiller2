@@ -62,7 +62,7 @@ public class Nose : MonoBehaviour
         if (isFirstClick)
         {
             Vector3 mouseDragPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mouseDragPosition.z = 0f; // Set Z to 0 to keep it in 2D space
+            mouseDragPosition.z = -5f; // Set Z to 0 to keep it in 2D space
             transform.position = mouseDragPosition;
         }
         

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8d62574dea0e0494ab32bd02afea22a3
+guid: c9ab664f626617d4a985e08cfbfab5c6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI Panel and Text_0
+      name: Untitled_Artwork_0
       rect:
         serializedVersion: 2
-        x: 134
-        y: 730
-        width: 1732
-        height: 782
+        x: 13
+        y: 54
+        width: 860
+        height: 746
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61ae2b1a79f764043bab656855c7c758
-      internalID: 1824306267
+      spriteID: d08878ed53d8f06468111f3e9a746dbd
+      internalID: -6076341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI Panel and Text_16
+      name: Untitled_Artwork_1
       rect:
         serializedVersion: 2
-        x: 259
-        y: 546
-        width: 487
-        height: 54
+        x: 892
+        y: 269
+        width: 1262
+        height: 469
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,71 +171,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4010deb3f7bdbb48bba7d7fcbf42e74
-      internalID: -1661551197
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI Panel and Text_22
-      rect:
-        serializedVersion: 2
-        x: 388
-        y: 373
-        width: 207
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6a340b5dfd0730a4c9acfcf98104b163
-      internalID: 317594869
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI Panel and Text_24
-      rect:
-        serializedVersion: 2
-        x: 788
-        y: 253
-        width: 80
-        height: 89
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 029a6a8f34d3e5044b36be769d71bd74
-      internalID: -177375666
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI Panel and Text_30
-      rect:
-        serializedVersion: 2
-        x: 414
-        y: 177
-        width: 159
-        height: 68
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 627ac36cacbbc0547aeee4527b9a537e
-      internalID: -1769901856
+      spriteID: 11abc6d792d02c048acab83cbf85f3a2
+      internalID: 1582803239
       vertices: []
       indices: 
       edges: []
@@ -251,38 +188,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      UI Panel and Text_0: 1824306267
-      UI Panel and Text_1: -1127608304
-      UI Panel and Text_10: 522462124
-      UI Panel and Text_11: 424609531
-      UI Panel and Text_12: 394191338
-      UI Panel and Text_13: 1887322364
-      UI Panel and Text_14: 1126855357
-      UI Panel and Text_15: 1545019998
-      UI Panel and Text_16: -1661551197
-      UI Panel and Text_17: -761093186
-      UI Panel and Text_18: -1714662225
-      UI Panel and Text_19: 1640688600
-      UI Panel and Text_2: 984834971
-      UI Panel and Text_20: 1362589250
-      UI Panel and Text_21: -1661863543
-      UI Panel and Text_22: 317594869
-      UI Panel and Text_23: -2100740675
-      UI Panel and Text_24: -177375666
-      UI Panel and Text_25: 989834928
-      UI Panel and Text_26: 1752306632
-      UI Panel and Text_27: 1237178663
-      UI Panel and Text_28: -1192069302
-      UI Panel and Text_29: 1664388111
-      UI Panel and Text_3: 474874195
-      UI Panel and Text_30: -1769901856
-      UI Panel and Text_31: -1282696331
-      UI Panel and Text_4: 150044155
-      UI Panel and Text_5: -945651112
-      UI Panel and Text_6: 1279399371
-      UI Panel and Text_7: 1753290367
-      UI Panel and Text_8: 1951631453
-      UI Panel and Text_9: -1727556482
+      Untitled_Artwork_0: -6076341
+      Untitled_Artwork_1: 1582803239
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
